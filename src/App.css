@@ -1,0 +1,169 @@
+#navigation_bar
+{
+  background-color: #6351ce;
+}
+#iconic_one
+{
+    background-image: linear-gradient( rgb(255, 16, 158),yellow);
+    color:white;
+    padding: 5px;
+    border-radius: 8px;
+    
+}
+#iconic_two
+{
+    background-color:dodgerblue;
+    padding: 5px;
+}
+#iconic_three
+{
+  background-color: rgb(26, 132, 219);
+  padding:5px;
+}
+.table td
+{
+  font-size:16px;
+}
+.table th
+{
+  font-size: 20px;
+}
+
+.ground-img{
+  transition:0.5s;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 1);
+}
+.ground-img:hover{
+  transform: scale(0.8);
+}
+
+#whole-ground
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  background-color: lightgrey
+}
+#G-1
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
+  background-color: #6351ce
+}
+#G-2
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
+  background-color: #6351ce
+}
+
+#G-3
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
+  background-color: #6351ce
+}
+
+#G-4
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
+  background-color: #6351ce;
+}
+
+
+#addcontent
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
+}
+#addcard
+{
+  border-radius: 30px;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+  background-color:whitesmoke;
+}
+#hrline
+{
+  border-bottom: 1px solid rgb(112, 112, 112);
+  
+}
+#hrline1
+{
+  border-bottom: 1px solid white;
+  
+}
+#summary
+{
+  background:#6351ce;
+  color:honeydew
+}
+#addcartsection
+{
+  background-color: rgb(192, 189, 189);
+}
+.table4
+{
+  background-color: #6351ce;
+}
+.table1
+{
+  background-color: lightgrey
+}
+#samecolor
+{
+  background-color:lightgrey
+}
+#batting{
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px;
+  letter-spacing: 5px;
+ 
+  
+}
+
+#Basball{
+  color: white;
+  letter-spacing: 3px;
+}
+.paragraph{
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.section-three{
+  background-image: linear-gradient(to bottom, #6351ce , white);
+}
+.paralax{
+  background-image: url('.//assets/f.jpg');
+  width: 100%;
+  height: 100vh; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.paralax-two{
+  background-image: url('.//assets/paralaxtwo.jfif');
+  width: 100%;
+  height: 100vh; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.question{
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 3px;
+}
+.questiontwo{
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+.section-six{
+  background-image: linear-gradient(to bottom, #6351ce , white);
+
+}
