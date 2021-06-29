@@ -7,7 +7,7 @@ const CalenderSections = () => {
     const [selectedDay, setSelectedDay] = useState(null);
     return (
         <>
-            <div className="card text-center">
+            <div className="card">
 
                 <div className="card-body d-flex justify-content-center">
 

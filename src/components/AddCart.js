@@ -146,7 +146,7 @@ class Addcard extends React.Component {
                                     <input type="checkbox" id="exampleInputEmail1" aria-describedby="emailHelp" className="ml-2" />
                                     <label for="exampleInputEmail1" class="form-label px-2">I have checked the Cages</label>
                                     <div className="text-center mt-4">
-                                        <input type="submit" className="btn btn-success text-center" value="check out" />
+                                        <Link to='/payment'><button className="btn btn-success text-center">Check out</button></Link>
                                     </div>
                                 </form>
                             </div>

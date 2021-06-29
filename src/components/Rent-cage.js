@@ -1,7 +1,7 @@
 import React from 'react';
 import img2 from '../assets/baseballimg.jpg'
 import img from '../assets/Ground-img1.jpg'
-import { Modal } from 'react-bootstrap'
+import { Modal, Button } from 'react-bootstrap'
 import CalenderSections from './Calender';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
@@ -114,7 +114,7 @@ class RentCage extends React.Component {
                                     data-aos-offset="300"
                                     data-aos-easing="ease-in-sine">Dinngger Provides many facilities and rent a cage is one of
                                     them.Checkout your desired renting a cage.Dinngger Provides many facilities and rent a cage is one of
-                                    them.Checkout your desired <br/>renting a cage.Checkout your desired renting a cage.
+                                    them.Checkout your desired <br />renting a cage.Checkout your desired renting a cage.
                                 </h5>
                             </div>
                             <div className="col-md-4 text-center">
@@ -346,7 +346,7 @@ class RentCage extends React.Component {
                     </div>
                 </section>
 
-                
+
 
                 <Modal show={this.state.show}  >
                     <Modal.Header className=" text-white" id="samecolor" ><span className=".modal"><h2 >Get Book Your court</h2></span></Modal.Header>
@@ -358,6 +358,7 @@ class RentCage extends React.Component {
 
                 </Modal>
 
+              
             </>
         )
     }
