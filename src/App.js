@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import RentCage from './components/Rent-cage';
 import Addcard from './components/AddCart';
 import { useState } from 'react';
+import Payment from './components/Payment';
 
 function App() {
   // const [Data,setData]=useState([])
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route exact path="/rentcage" component={RentCage} />
         <Route exact path="/add-cart" component={Addcard}/>
+        <Route exact path="/payment" component={Payment}/>
       </Switch>
       <Footer/>
     </Router>
