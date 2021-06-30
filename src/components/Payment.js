@@ -1,15 +1,16 @@
-import { render } from '@testing-library/react'
-import React from 'react'
-class Payment extends React.Component
-{
-    render()
-    {
-        return(
-            <>
-            <h1>Welcome to Payment page Deepak.</h1>
-            <button>Proceed further</button>
-            </>
-        )
+import React, { Component } from "react";
+import PaypalButtons from "./paypal/PaypalButtons";
+
+
+class Payment extends Component {
+
+    render() {
+            return (
+                <>
+                    <PaypalButtons amount = '1' />
+                </>
+            );
     }
 }
-export default Payment
+
+export default Payment;
