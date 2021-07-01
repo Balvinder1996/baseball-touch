@@ -1,25 +1,8 @@
 #navigation_bar
 {
-  background-color: #6351ce;
+  background-color: #40ad6d;
 }
-#iconic_one
-{
-    background-image: linear-gradient( rgb(255, 16, 158),yellow);
-    color:white;
-    padding: 5px;
-    border-radius: 8px;
-    
-}
-#iconic_two
-{
-    background-color:dodgerblue;
-    padding: 5px;
-}
-#iconic_three
-{
-  background-color: rgb(26, 132, 219);
-  padding:5px;
-}
+
 .table td
 {
   font-size:16px;
@@ -46,24 +29,24 @@
 #G-1
 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
-  background-color: #6351ce
+  background-color: #40ad6d
 }
 #G-2
 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
-  background-color: #6351ce
+  background-color: #40ad6d
 }
 
 #G-3
 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
-  background-color: #6351ce
+  background-color: #40ad6d
 }
 
 #G-4
 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
-  background-color: #6351ce;
+  background-color: #40ad6d;
 }
 
 
@@ -89,7 +72,7 @@
 }
 #summary
 {
-  background:#6351ce;
+  background:#40ad6d;
   color:honeydew
 }
 #addcartsection
@@ -98,7 +81,7 @@
 }
 .table4
 {
-  background-color: #6351ce;
+  background-color: #40ad6d;
 }
 .table1
 {
@@ -128,7 +111,7 @@
   letter-spacing: 3px;
 }
 .section-three{
-  background-image: linear-gradient(to bottom, #6351ce , white);
+  background-image: linear-gradient(to bottom, #40ad6d , white);
 }
 .paralax{
   background-image: url('.//assets/f.jpg');
@@ -164,6 +147,6 @@
  
 }
 .section-six{
-  background-image: linear-gradient(to bottom, #6351ce , white);
+  background-image: linear-gradient(to bottom, #40ad6d, white);
 
 }
