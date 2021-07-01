@@ -78,23 +78,33 @@ class PaypalButton extends React.Component {
             <div>
 
                 {showButtons && (
-                    <div>
-                        <div>
-                            <h2>Items: demo payment</h2>
-                            <h2>Total checkout Amount ${this.state.checkout_amount}</h2>
+                    <section className="mt-5">
+                        <div className="d-flex justify-content-center align-items-center">
+                           <PayPalButton
+                           createOrder={(data, actions) => this.createOrder(data, actions)}
+                          onApprove={(data, actions) => this.onApprove(data, actions)}
+                       />
                         </div>
+                    </section>
+                    // <div>
+                    //     <div>
+                    //         <h2>Items: demo payment</h2>
+                    //         <h2>Total checkout Amount ${this.state.checkout_amount}</h2>
+                    //     </div>
 
-                        <PayPalButton
-                            createOrder={(data, actions) => this.createOrder(data, actions)}
-                            onApprove={(data, actions) => this.onApprove(data, actions)}
-                        />
-                    </div>
+                    //     <PayPalButton
+                    //         createOrder={(data, actions) => this.createOrder(data, actions)}
+                    //         onApprove={(data, actions) => this.onApprove(data, actions)}
+                    //     />
+                    // </div>
                 )}
 
                 {paid && (
-                    <div>
-                        <h2> Congrats! your payment is done successfully !!! </h2>
-                    </div>
+                    <section className="my-5" id="addcartsection">
+                        <div className="container">
+                            <div>fgj</div>
+                        </div>
+                    </section>
                 )}
             </div>
         );
