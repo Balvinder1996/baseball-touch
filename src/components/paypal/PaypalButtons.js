@@ -24,6 +24,7 @@ class PaypalButton extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         const { isScriptLoaded, isScriptLoadSucceed } = this.props;
 
         if (isScriptLoaded && isScriptLoadSucceed) {
@@ -85,7 +86,7 @@ class PaypalButton extends React.Component {
                             <div className="row">
                                 <div className="col-md-6 pl-5 pt-4">
                                     <div className="my-2" >
-                                        <h2 className="font-weight-bold ">Order summary</h2>
+                                        <h2 className="font-weight-bold " style={{ color: "#6351ce" }}>Order summary</h2>
                                     </div>
                                     <hr id="hrline" />
                                     <div className="mt-3">
@@ -138,7 +139,7 @@ class PaypalButton extends React.Component {
                                     <div className="text-center mt-3">
                                         <h3 className="font-weight-bold">Payment Modes:-</h3>
                                         <div id="fixed-height" className="mt-5">
-                                            <div>
+                                            <div >
                                                 <img src={img} className="img-fluid" alt="/" />
                                             </div>
                                             <PayPalButton
