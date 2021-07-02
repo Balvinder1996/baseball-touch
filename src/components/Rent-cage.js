@@ -278,7 +278,7 @@ const Rentcage = () => {
                                 </div>
                                 <div className="card-footer mb-3 text-center">
                                     <div>
-                                        <button className="btn btn-xl text-white bg-danger  font-weight-bold" onClick={updateStatus} name="Unselected">Clear</button>
+                                        <button className="btn btn-xl text-white bg-danger  font-weight-bold" onClick={updateStatus} name="Unselected">Clear-Up</button>
                                     </div>
                                     <div>
                                         <button className="btn btn-sm btn-success" onClick={modal_active}><h6 className="font-weight-bold">Schedule</h6></button>

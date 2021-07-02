@@ -2,24 +2,6 @@
 {
   background-color: #6351ce;
 }
-#iconic_one
-{
-    background-image: linear-gradient( rgb(255, 16, 158),yellow);
-    color:white;
-    padding: 5px;
-    border-radius: 8px;
-    
-}
-#iconic_two
-{
-    background-color:dodgerblue;
-    padding: 5px;
-}
-#iconic_three
-{
-  background-color: rgb(26, 132, 219);
-  padding:5px;
-}
 .table td
 {
   font-size:16px;
@@ -167,3 +149,36 @@
   background-image: linear-gradient(to bottom, #6351ce , white);
 
 }
+.formStyle { 
+  background-color: #ffffffcc;
+  padding: 20px; 
+  width: 400px; 
+  margin-bottom: 20px; 
+  border-bottom-width: 2px; 
+  border-bottom-style: solid; 
+  border-bottom-color: #6351ce; 
+  border-top-style: none; 
+  border-right-style: none; 
+  border-left-style: none; 
+  font-size: 1em;
+  font-weight: 100;
+  color: #000000;
+}
+
+/*To remove the outline that appears on clicking the input textbox*/
+input:focus {
+  outline: none;
+}
+#payment_container
+{
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+#fixed-height
+{
+  height: 580px;
+  overflow-y: scroll;
+}
+
+/*apply media query on table and width of the input tah in the payment page*/   

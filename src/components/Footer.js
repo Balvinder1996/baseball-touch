@@ -3,7 +3,7 @@ class Footer extends React.Component {
     render() {
         return (
             <>
-                <footer className="page-footer font-small unique-color-dark mt-1">
+                <footer className="page-footer font-small unique-color-dark">
                     <div style={{ backgroundColor: "#6351CE" }}>
                         <div className="container">
                             <div className="row py-4 d-flex align-items-center">
