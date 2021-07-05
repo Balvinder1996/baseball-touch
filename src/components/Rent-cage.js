@@ -99,7 +99,7 @@ class Rentcage extends React.Component {
     render() {
         return (
             <>
-            <pre>{JSON.stringify(this.state.Data.selectedDay)}</pre>
+            <pre>{JSON.stringify(this.state.slots)}</pre>
                 <button onClick={this.getData}>clickhere</button>
                 <section className="mt-5">
                     <div className="container-fluid">
