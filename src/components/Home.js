@@ -5,6 +5,7 @@ import b from '../assets/b.png'
 import c from '../assets/c.png'
 import d from '../assets/d.png'
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 import { Carousel } from 'react-bootstrap'
 
@@ -64,11 +65,23 @@ class Home extends React.Component {
                 </section>
 
                 <section className="section-three">
-                    <div className="container">
-                        <div className="row p-lg-3"  >
-                            <div className="col-md-4 p-lg-5 d-flex justify-content-center  p-4 text-center border-1"><p className="paragraph" data-aos="zoom-in">OUR SUMMER CAMPS! LIMITED SPOTS AVAILABLE.</p></div>
-                            <div className="col-md-4 p-lg-5 d-flex justify-content-center  p-4 text-center border-1"><p className="paragraph" data-aos="zoom-in">BASEBALL/SOFTBALL FACILITY BY THE HOUR! GREAT FOR INDIVIDUAL OR GROUP/TEAM TRAINING.</p></div>
-                            <div className="col-md-4 p-lg-5 d-flex justify-content-center  p-4 text-center border-1"><p className="paragraph" data-aos="zoom-in">CATCHING LESSONS AVAILABLE.</p></div>
+                    <div className="container-fluid">
+                        <div className="row p-lg-5 d-flex justify-content-around align-items-center"  >
+                            <div className="col-md-6">
+                                <div>
+                                    <h1 className="display-4">Book Your Cage</h1>
+                                    <h3>CAGE RENTALS - Rent a Batting cage or the entire baseball/softball facility by the hour! Great for the individual or group/team training.
+                                    </h3>
+                                </div>
+                            </div>
+                            <div className="col-md-6 py-5">
+                                <div >
+                                    <h1 className="text-center py-4 display-4 animate__animated animate__flash animate__slower animate__infinite">BOOK  NOW</h1>
+                                </div>
+                                <div className='text-center'>
+                                    <Link to="rentcage"><button className="btn btn-success btn-lg">Rent NOW</button></Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

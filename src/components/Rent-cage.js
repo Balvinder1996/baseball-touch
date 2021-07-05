@@ -1,26 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import img2 from '../assets/baseballimg.jpg'
 import img from '../assets/Ground-img1.jpg'
 import img3 from '../assets/ballimg2.jpg'
-import { Modal } from 'react-bootstrap'
-import CalenderSections from './Calender';
+import { Modal, ResponsiveEmbed } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
+import Axios from 'axios'
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import { Calendar } from "react-modern-calendar-datepicker";
+import './calender.css'
 
 import { Carousel } from 'react-bootstrap'
 
 class Rentcage extends React.Component {
-    componentDidMount() {
-        AOS.init({ duration: 1700 })
-    }
     constructor(props) {
         super(props)
         this.state =
         {
-            show: false
+            show: false,
+            slots: [],
+            errormsg: ""
         }
 
     }
+    componentDidMount() {
+        AOS.init({ duration: 1700 });
+    }
+    getData = () => {
+        let dataurl = 'https://dingers-training.herokuapp.com/availabiliy/check?date=2021-07-08';
+        Axios.get(dataurl).then((response) => {
+            let Data = response.data.time
+            this.setState(
+                {
+                    ...this.state,
+                    slots: Data,
+                    selectedDay: null
+                }
+            )
+        }).catch((error) => {
+            this.setState(
+                {
+                    ...this.state,
+                    errormsg: error
+                }
+            )
+        })
+    }
+
 
     modal_active = () => {
         this.setState(
@@ -36,9 +62,18 @@ class Rentcage extends React.Component {
             }
         )
     }
+    setSelectedDay = (value) => {
+        this.setState(
+            {
+                selectedDay: value
+            }
+        )
+    }
     render() {
         return (
             <>
+                <pre>{JSON.stringify(this.state)}</pre>
+                <button onClick={this.getData}>clickhere</button>
                 <section className="mt-5">
                     <div className="container-fluid">
                         <div className="row d-flex justify-content-center align-items-center">
@@ -228,13 +263,13 @@ class Rentcage extends React.Component {
                                     <label class="custom-control-label" for="defaultGroupExample3"><h4>Full Facility</h4></label>
                                 </div>
                             </div>
-                            <div className="col-md-4 text-center"><img src={img3}  className="img-fluid"/></div>
+                            <div className="col-md-4 text-center"><img src={img3} className="img-fluid" /></div>
                             <div className="col-md-3 text-white">
                                 <div>
                                     <h2>Machine Facility</h2>
                                 </div>
-                            <div class="custom-control custom-radio py-4 mt-5  ">
-                                
+                                <div class="custom-control custom-radio py-4 mt-5  ">
+
                                     <input type="radio" class="custom-control-input" id="defaultGroupExample4" name="groupOfDefaultRadios" />
                                     <label class="custom-control-label" for="defaultGroupExample4"><h4>Without Machine</h4></label>
                                 </div>
@@ -248,19 +283,51 @@ class Rentcage extends React.Component {
                                     <h2>Rates</h2>
                                     <h4 className="mt-5">40$/hour</h4>
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
 
 
                 </section>
+                <button onClick={this.modal_active}>lskd</button>
 
 
                 <Modal size="lg" show={this.state.show}  >
                     <Modal.Header className=" text-white" id="samecolor" ><span className=".modal"><h2 >Get Book Your court</h2></span></Modal.Header>
                     <Modal.Body className=".modal text-center" >
-                        <CalenderSections />
+                        <div className="card">
+
+                            <div className="card-body ">
+                                <div className="row">
+                                    <div className="col-md-8 d-flex justify-content-center">
+                                        <Calendar
+                                            value={this.state.selectedDay}
+                                            onChange={this.setSelectedDay}
+                                            calendarClassName="responsive-calendar" // added this
+                                            shouldHighlightWeekends
+                                        />
+                                    </div>
+                                    <div className="col-md-4 ">
+                                        <h3>Time slots</h3>
+                                        
+                                        <div id="slot-timings">
+                                            {
+                                                this.state.slots.map((list) => {
+                                                    return (
+                                                        <ul className="list-group">
+                                                            <li className="list-group-item my-2 bg-success text-white"> <input class="form-check-input" type="radio" name="same" value="" aria-label="..." />
+                                                                {list}</li>
+                                                        </ul>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <Link to='/add-cart' ><button className="btn btn-success mt-5" >Add to card</button></Link>
                         <button className="btn btn-danger mt-5" onClick={this.modal_deactive}>close</button>
                     </Modal.Body>

@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^12.8.3",
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
     "mdbootstrap": "^4.19.2",
     "rc-time-picker": "^3.7.3",

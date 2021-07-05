@@ -9,14 +9,7 @@ import { useState } from 'react';
 import Payment from './components/Payment';
 
 function App() {
-  // const [Data,setData]=useState([])
-  // const receiveData=(value)=>
-  // {
-  //   setData(value);
-  //   console.log("hi");
-  //   console.log(Data)
-    
-  // }
+ 
   return (
     <Router>
       <NavBar/>

@@ -180,5 +180,10 @@ input:focus {
   height: 580px;
   overflow-y: scroll;
 }
+#slot-timings
+{
+  height: 300px;
+  overflow-y: scroll;
+}
 
 /*apply media query on table and width of the input tah in the payment page*/   
