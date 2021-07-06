@@ -5,9 +5,14 @@ class Addcard extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0)
     }
+    constructor(props)
+    {
+        super(props)
+    }
     render() {
         return (
             <>
+            <pre>{JSON.stringify(this.props.sending)}</pre>
                 <section className="py-5" id="addcartsection" >
                     <div className="container" id="addcard" data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"

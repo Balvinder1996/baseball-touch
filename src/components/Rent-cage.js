@@ -7,15 +7,15 @@ import { Link } from 'react-router-dom';
 import cage from "../assets/cage.png";
 import AOS from 'aos';
 import Axios from 'axios'
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import { Calendar } from "react-modern-calendar-datepicker";
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 import './calender.css'
 
-import { Carousel } from 'react-bootstrap'
 
 class Rentcage extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.handleDayClick = this.handleDayClick.bind(this);
         this.state =
         {
             show: false,
@@ -25,7 +25,9 @@ class Rentcage extends React.Component {
             {
                 Arena: "",
                 Amount: 0,
-                selectedDay:""
+                selectedDay: null,
+                selectedSlot:""
+
             }
         }
 
@@ -34,14 +36,14 @@ class Rentcage extends React.Component {
         AOS.init({ duration: 1700 });
     }
     getData = () => {
-        let dataurl = 'https://dingers-training.herokuapp.com/availabiliy/check?date=2021-07-08';
+        let dataurl = 'https://dingers-training.herokuapp.com/availabiliy/check?date=2021-07-08&arena=1';
         Axios.get(dataurl).then((response) => {
             let Data = response.data.time
             this.setState(
                 {
                     ...this.state,
                     slots: Data,
-                    
+
                 }
             )
         }).catch((error) => {
@@ -66,26 +68,19 @@ class Rentcage extends React.Component {
     modal_deactive = () => {
         this.setState(
             {
-                ...this.state,
-                show: false
+                
+                show: false,
+                Data:
+                {
+                 Arena: "",
+                Amount: 0,
+                selectedDay: null,
+                selectedSlot:""
+                }
             }
         )
     }
-    setSelectedDay = (req) => {
-        let Format=req;
-        // let Date=Format.value(Format)
-        
-        
-        this.setState(
-            {
-               Data:
-               {
-                   ...this.state,
-                   selectedDay: Format
-               }
-            }
-        )
-    }
+
     preference = (event) => {
         this.setState(
             {
@@ -96,10 +91,34 @@ class Rentcage extends React.Component {
             }
         )
     }
+    handleDayClick(day, { selected }) {
+        this.setState({
+            Data:
+            {
+                selectedDay: selected ? undefined : day,
+            }
+        });
+    }
+    timings=(event)=>
+    {
+        this.setState(
+            {
+                Data:
+                {
+                    selectedSlot:event.target.value
+                }
+            }
+        )
+    }
+    addingcart=(event)=>
+    {
+        event.preventDefault();
+        this.props.data(this.state.slots)   
+    }
     render() {
         return (
             <>
-            <pre>{JSON.stringify(this.state.slots)}</pre>
+                <pre>{JSON.stringify(this.state.Data)}</pre>
                 <button onClick={this.getData}>clickhere</button>
                 <section className="mt-5">
                     <div className="container-fluid">
@@ -272,7 +291,7 @@ class Rentcage extends React.Component {
                     </div>
                 </section>
 
-{/* Add to card starts here */}
+                {/* Add to card starts here */}
 
                 <section>
                     <div className="container-fluid">
@@ -484,16 +503,20 @@ class Rentcage extends React.Component {
                             <div className="card-body ">
                                 <div className="row">
                                     <div className="col-md-8 d-flex justify-content-center">
-                                    
-                                        <Calendar
-                                            req={this.state.Data.selectedDay}
-                                            onChange={this.setSelectedDay}
-                                            calendarClassName="responsive-calendar" // added this
-                                            shouldHighlightWeekends
+
+                                        <DayPicker
+                                            selectedDays={this.state.Data.selectedDay}
+                                            onDayClick={this.handleDayClick}
+                                            disabledDays={[
+                                                {
+
+                                                    before: new Date(),
+                                                },
+                                            ]}
                                         />
                                     </div>
                                     <div className="col-md-4 ">
-                                    
+
                                         <h3>Time slots</h3>
 
                                         <div id="slot-timings">
@@ -501,8 +524,7 @@ class Rentcage extends React.Component {
                                                 this.state.slots.map((list) => {
                                                     return (
                                                         <ul className="list-group">
-                                                            <li className="list-group-item my-2 bg-success text-white"> <input class="form-check-input" type="radio" name="same" value="" aria-label="..." />
-                                                                {list}</li>
+                                                             <input type="text" className="btn  btn-success text-weight-bold"  value={list} onClick={this.timings} />
                                                         </ul>
                                                     )
                                                 })
@@ -513,12 +535,15 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to='/add-cart' ><button className="btn btn-success mt-5" >Add to card</button></Link>
+                        <Link to='/add-cart' ><button className="btn btn-success mt-5"  onClick={this.addingcart}>Add to card</button></Link>
                         <button className="btn btn-danger mt-5" onClick={this.modal_deactive}>close</button>
                     </Modal.Body>
 
                 </Modal>
                 
+{
+    console.log(this.state.Data.selectedSlot)
+}
             </>
         )
     }
