@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 class Addcard extends React.Component {
-    componentDidMount() {
+    componentDidMount(props) {
         window.scrollTo(0, 0)
+       console.log(this.props.location.state)
     }
     constructor(props)
     {

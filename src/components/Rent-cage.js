@@ -86,6 +86,7 @@ class Rentcage extends React.Component {
     preference = (event) => {
         this.setState(
             {
+                show: true,
                 Data:
                 {
                     Arena: event.target.name
@@ -112,8 +113,8 @@ class Rentcage extends React.Component {
         )
     }
     addingcart = (event) => {
-        event.preventDefault();
-        this.props.data(this.state.slots)
+
+        // this.props.data(this.state.slots)
     }
     render() {
         return (
@@ -293,7 +294,7 @@ class Rentcage extends React.Component {
 
                 {/* Add to card starts here */}
 
-                <section className="my-4">
+                <section className="my-5">
                     <div className="container-fluid">
                         <div
                             className="row p-4 text-white"
@@ -306,7 +307,7 @@ class Rentcage extends React.Component {
 
                         <div className="container  mt-4">
                             <div className="row" id="cage-row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 d-flex align-items-center">
                                     <img
                                         className="img-fluid py-2"
                                         src={cage1}
@@ -331,7 +332,7 @@ class Rentcage extends React.Component {
                                             <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
                                         </div>
                                     </div>
-                                    <hr id="hrline" className="mx-3 bg-success"/>
+                                    <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
                                             <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
@@ -355,7 +356,7 @@ class Rentcage extends React.Component {
 
                         <div className="container mt-4">
                             <div className="row" id="cage-row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 d-flex align-items-center">
                                     <img
                                         className="img-fluid py-2"
                                         src={cage1}
@@ -380,7 +381,7 @@ class Rentcage extends React.Component {
                                             <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
                                         </div>
                                     </div>
-                                    <hr id="hrline" className="mx-3 bg-success"/>
+                                    <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
                                             <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
@@ -404,7 +405,7 @@ class Rentcage extends React.Component {
 
                         <div className="container mt-4">
                             <div className="row" id="cage-row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 d-flex align-items-center">
                                     <img
                                         className="img-fluid py-2"
                                         src={cage1}
@@ -429,7 +430,7 @@ class Rentcage extends React.Component {
                                             <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
                                         </div>
                                     </div>
-                                    <hr id="hrline" className="mx-3 bg-success"/>
+                                    <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
                                             <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
@@ -453,7 +454,7 @@ class Rentcage extends React.Component {
                 </section>
 
 
-                <button onClick={this.modal_active}>lskd</button>
+
 
 
                 <Modal size="lg" show={this.state.show}  >
@@ -466,6 +467,7 @@ class Rentcage extends React.Component {
                                     <div className="col-md-8 d-flex justify-content-center">
 
                                         <DayPicker
+                                            id="table1"
                                             selectedDays={this.state.Data.selectedDay}
                                             onDayClick={this.handleDayClick}
                                             disabledDays={[
@@ -496,7 +498,7 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to='/add-cart' ><button className="btn btn-success mt-5" onClick={this.addingcart}>Add to card</button></Link>
+                        <Link to={{ pathname: '/add-cart', state: { "cardData": this.state.Data } }} className="btn btn-success mt-5" >Add to card</Link>
                         <button className="btn btn-danger mt-5" onClick={this.modal_deactive}>close</button>
                     </Modal.Body>
 
