@@ -70,14 +70,14 @@ class Rentcage extends React.Component {
     modal_deactive = () => {
         this.setState(
             {
-
+                ...this.state,
                 show: false,
                 Data:
                 {
                     Arena: "",
                     Amount: 0,
                     selectedDay: null,
-                    selectedSlot: ""
+                    selectedSlot:""
                 }
             }
         )
@@ -86,9 +86,11 @@ class Rentcage extends React.Component {
     preference = (event) => {
         this.setState(
             {
+                ...this.state,
                 show: true,
                 Data:
                 {
+                    ...this.state.Data,
                     Arena: event.target.name
                 }
             }
@@ -96,8 +98,9 @@ class Rentcage extends React.Component {
     }
     handleDayClick(day, { selected }) {
         this.setState({
+            ...this.state,
             Data:
-            {
+            {   ...this.state.Data,
                 selectedDay: selected ? undefined : day,
             }
         });
@@ -105,21 +108,21 @@ class Rentcage extends React.Component {
     timings = (event) => {
         this.setState(
             {
+                ...this.state,
                 Data:
                 {
+                    ...this.state.Data,
                     selectedSlot: event.target.value
                 }
             }
         )
     }
-    addingcart = (event) => {
-
-        // this.props.data(this.state.slots)
-    }
+    
     render() {
         return (
             <>
-                <pre>{JSON.stringify(this.state.Data)}</pre>
+                
+
                 <button onClick={this.getData}>clickhere</button>
                 <section className="mt-5">
                     <div className="container-fluid">
@@ -498,7 +501,7 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to={{ pathname: '/add-cart', state: { "cardData": this.state.Data } }} className="btn btn-success mt-5" >Add to card</Link>
+                        <Link to={{ pathname: '/add-cart', transfer: { "cardData": this.state.Data } }} className="btn btn-success mt-5" >Add to card</Link>
                         <button className="btn btn-danger mt-5" onClick={this.modal_deactive}>close</button>
                     </Modal.Body>
 
