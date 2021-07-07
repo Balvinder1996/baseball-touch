@@ -4,7 +4,7 @@ class Footer extends React.Component {
         return (
             <>
                 <footer className="page-footer font-small unique-color-dark">
-                    <div style={{ backgroundColor: "#6351CE" }}>
+                    <div style={{ backgroundColor: "#40ad6d"}}>
                         <div className="container">
                             <div className="row py-4 d-flex align-items-center">
                                 <div className="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
@@ -34,14 +34,14 @@ class Footer extends React.Component {
                         <div className="row mt-3">
                             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                                 <h6 className="text-uppercase font-weight-bold">Company name</h6>
-                                <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
+                                <hr className=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px",backgroundColor:"#40ad6d"}} />
                                 <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
                                     consectetur
                                     adipisicing elit.</p>
                             </div>
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                                 <h6 className="text-uppercase font-weight-bold">Products</h6>
-                                <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
+                                <hr className=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px",backgroundColor:"#40ad6d" }} />
                                 <p>
                                     <a href="#!">MDBootstrap</a>
                                 </p>
@@ -57,7 +57,7 @@ class Footer extends React.Component {
                             </div>
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                                 <h6 className="text-uppercase font-weight-bold">Useful links</h6>
-                                <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
+                                <hr className=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px",backgroundColor:"#40ad6d" }} />
                                 <p>
                                     <a href="#!">Your Account</a>
                                 </p>
@@ -73,7 +73,7 @@ class Footer extends React.Component {
                             </div>
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                                 <h6 className="text-uppercase font-weight-bold">Contact</h6>
-                                <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
+                                <hr className=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px",backgroundColor:"#40ad6d" }} />
                                 <p>
                                     <i className="fas fa-home mr-3"></i> New York, NY 10012, US</p>
                                 <p>

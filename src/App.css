@@ -1,6 +1,6 @@
 #navigation_bar
 {
-  background-color: #6351ce;
+  background-color: #40ad6d;
 }
 .table td
 {
@@ -28,24 +28,24 @@
 #G-1
 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
-  background-color: #6351ce
+  background-color: #40ad6d
 }
 #G-2
 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
-  background-color: #6351ce
+  background-color: #40ad6d
 }
 
 #G-3
 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
-  background-color: #6351ce
+  background-color: #40ad6d
 }
 
 #G-4
 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, .5);
-  background-color: #6351ce;
+  background-color: #40ad6d;
 }
 
 
@@ -71,7 +71,7 @@
 }
 #summary
 {
-  background:#6351ce;
+  background:#40ad6d;
   color:honeydew
 }
 #addcartsection
@@ -80,7 +80,7 @@
 }
 .table4
 {
-  background-color: #6351ce;
+  background-color: #40ad6d;
 }
 .table1
 {
@@ -110,7 +110,7 @@
   letter-spacing: 3px;
 }
 .section-three{
-  background-image: linear-gradient(to bottom, #6351ce , white);
+  background-image: linear-gradient(to bottom, #40ad6d , white);
 }
 .paralax{
   background-image: url('.//assets/f.jpg');
@@ -146,7 +146,7 @@
  
 }
 .section-six{
-  background-image: linear-gradient(to bottom, #6351ce , white);
+  background-image: linear-gradient(to bottom, #40ad6d , white);
 
 }
 .formStyle { 
@@ -156,7 +156,7 @@
   margin-bottom: 20px; 
   border-bottom-width: 2px; 
   border-bottom-style: solid; 
-  border-bottom-color: #6351ce; 
+  border-bottom-color: #40ad6d; 
   border-top-style: none; 
   border-right-style: none; 
   border-left-style: none; 
@@ -238,14 +238,12 @@ input:focus {
    font-family: 'Poppins', sans-serif;
  }
  #cage-row{
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px; 
   transition: 0.10s;
 }
-#cage-row:hover{
-  border-left: 5px solid #6351ce;
-}
+
 #book-btn{
-  background-color: #6351ce !important;
+  background-color: #40ad6d !important;
 }
 #Book-cage{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}

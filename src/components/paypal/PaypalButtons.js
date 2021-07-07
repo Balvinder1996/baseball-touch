@@ -86,7 +86,7 @@ class PaypalButton extends React.Component {
                             <div className="row">
                                 <div className="col-md-6 pl-5 pt-4">
                                     <div className="my-2" >
-                                        <h2 className="font-weight-bold " style={{ color: "#6351ce" }}>Order summary</h2>
+                                        <h2 className="font-weight-bold " style={{ color: "#40ad6d" }}>Order summary</h2>
                                     </div>
                                     <hr id="hrline" />
                                     <div className="mt-3">
@@ -152,17 +152,7 @@ class PaypalButton extends React.Component {
                             </div>
                         </div>
                     </section>
-                    // <div>
-                    //     <div>
-                    //         <h2>Items: demo payment</h2>
-                    //         <h2>Total checkout Amount ${this.state.checkout_amount}</h2>
-                    //     </div>
-
-                    //     <PayPalButton
-                    //         createOrder={(data, actions) => this.createOrder(data, actions)}
-                    //         onApprove={(data, actions) => this.onApprove(data, actions)}
-                    //     />
-                    // </div>
+                   
                 )
                 }
 

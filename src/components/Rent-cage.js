@@ -4,7 +4,9 @@ import img from '../assets/Ground-img1.jpg'
 import img3 from '../assets/ballimg2.jpg'
 import { Modal, ResponsiveEmbed } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import cage from "../assets/cage.png";
+import cage1 from "../assets/cage1.png";
+import cage2 from "../assets/cage2.png";
+import cage3 from "../assets/cage3.png";
 import AOS from 'aos';
 import Axios from 'axios'
 import DayPicker from 'react-day-picker';
@@ -26,7 +28,7 @@ class Rentcage extends React.Component {
                 Arena: "",
                 Amount: 0,
                 selectedDay: null,
-                selectedSlot:""
+                selectedSlot: ""
 
             }
         }
@@ -68,14 +70,14 @@ class Rentcage extends React.Component {
     modal_deactive = () => {
         this.setState(
             {
-                
+
                 show: false,
                 Data:
                 {
-                 Arena: "",
-                Amount: 0,
-                selectedDay: null,
-                selectedSlot:""
+                    Arena: "",
+                    Amount: 0,
+                    selectedDay: null,
+                    selectedSlot: ""
                 }
             }
         )
@@ -99,21 +101,19 @@ class Rentcage extends React.Component {
             }
         });
     }
-    timings=(event)=>
-    {
+    timings = (event) => {
         this.setState(
             {
                 Data:
                 {
-                    selectedSlot:event.target.value
+                    selectedSlot: event.target.value
                 }
             }
         )
     }
-    addingcart=(event)=>
-    {
+    addingcart = (event) => {
         event.preventDefault();
-        this.props.data(this.state.slots)   
+        this.props.data(this.state.slots)
     }
     render() {
         return (
@@ -293,199 +293,160 @@ class Rentcage extends React.Component {
 
                 {/* Add to card starts here */}
 
-                <section>
+                <section className="my-4">
                     <div className="container-fluid">
                         <div
                             className="row p-4 text-white"
-                            style={{ backgroundColor: "#6351ce" }}
+                            style={{ backgroundColor: "#40ad6d" }}
                         >
                             <div className="col-md-12 text-center">
                                 <h3 id="dinger-heding">DINGERS CAGE RENTAL PRICE LIST</h3>
                             </div>
                         </div>
 
-                        <div className="container  pt-5">
-                            <div className="row mb-3" id="cage-row">
-                                <div className="col-md-4 p-3">
+                        <div className="container  mt-4">
+                            <div className="row" id="cage-row">
+                                <div className="col-md-4">
                                     <img
-                                        src={cage}
+                                        className="img-fluid py-2"
+                                        src={cage1}
                                         alt="/"
-                                        style={{ width: "250px", height: "125px" }}
+
                                     />
                                 </div>
-                                <div className="col-md-4 p-5">
-                                    <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
-                                    <h5 className="Foot-cage-paragraph">
-                                        Includes Ball, Pitching Screen and Tee.
-                                    </h5>
-                                </div>
-                                <div className="col-md-2  p-5">
-                                    <h3 className="Foot-cage-price">
-                                        <h5>32.00</h5>
-                                    </h3>
-                                </div>
-
-                                <div className="col-md-2 p-5">
-                                    <button className="btn btn-sm btn-success" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
-                                </div>
-                            </div>
-
-                            <div className="row mb-3" id="cage-row">
-                                <div className="col-md-4 p-3">
-                                    <img
-                                        src={cage}
-                                        alt="/"
-                                        style={{ width: "250px", height: "125px" }}
-                                    />
-                                </div>
-                                <div className="col-md-4 p-5">
-                                    <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
-                                    <h5 className="Foot-cage-paragraph">
-                                        Includes Ball, Pitching Screen and Tee.
-                                    </h5>
-                                </div>
-                                <div className="col-md-2  p-5">
-                                    <h3 className="Foot-cage-price">
-                                        <h5>32.00</h5>
-                                    </h3>
-                                </div>
-
-                                <div className="col-md-2 p-5">
-                                    <button className="btn btn-sm btn-success" onClick={this.preference} name="35 Foot Ground with Machine">Book</button>
-                                </div>
-                            </div>
-
-                            <div className="row mb-3" id="cage-row">
-                                <div className="col-md-4 p-3">
-                                    <img
-                                        src={cage}
-                                        alt="/"
-                                        style={{ width: "250px", height: "125px" }}
-                                    />
-                                </div>
-                                <div className="col-md-4 p-5">
-                                    <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
-                                    <h5 className="Foot-cage-paragraph">
-                                        Includes Ball, Pitching Screen and Tee.
-                                    </h5>
-                                </div>
-                                <div className="col-md-2  p-5">
-                                    <h3 className="Foot-cage-price">
-                                        <h5>32.00</h5>
-                                    </h3>
-                                </div>
-
-                                <div className="col-md-2 p-5">
-                                    <button className="btn btn-sm btn-success" onClick={this.preference} name="70 Foot Without Machine">Book</button>
-                                </div>
-                            </div>
-
-                            <div className="row mb-3" id="cage-row">
-                                <div className="col-md-4 p-3">
-                                    <img
-                                        src={cage}
-                                        alt="/"
-                                        style={{ width: "250px", height: "125px" }}
-                                    />
-                                </div>
-                                <div className="col-md-4 p-5">
-                                    <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
-                                    <h5 className="Foot-cage-paragraph">
-                                        Includes Ball, Pitching Screen and Tee.
-                                    </h5>
-                                </div>
-                                <div className="col-md-2  p-5">
-                                    <h3 className="Foot-cage-price">
-                                        <h5>32.00</h5>
-                                    </h3>
-                                </div>
-
-                                <div className="col-md-2 p-5">
-                                    <button className="btn btn-sm btn-success" onClick={this.preference} name="70 Foot Without Machine">Book</button>
-                                </div>
-                            </div>
-
-                            <div className="row mb-3" id="cage-row">
-                                <div className="col-md-4 p-3">
-                                    <img
-                                        src={cage}
-                                        alt="/"
-                                        style={{ width: "250px", height: "125px" }}
-                                    />
-                                </div>
-                                <div className="col-md-4 p-5">
-                                    <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
-                                    <h5 className="Foot-cage-paragraph">
-                                        Includes Ball, Pitching Screen and Tee.
-                                    </h5>
-                                </div>
-                                <div className="col-md-2  p-5">
-                                    <h3 className="Foot-cage-price">
-                                        <h5>32.00</h5>
-                                    </h3>
-                                </div>
-
-                                <div className="col-md-2 p-5">
-                                    <button className="btn btn-sm btn-success" onClick={this.preference} name="Full Facility Without Machine">Book</button>
-                                </div>
-                            </div>
-
-                            <div className="row mb-3" id="cage-row">
-                                <div className="col-md-4 p-3">
-                                    <img
-                                        src={cage}
-                                        alt="/"
-                                        style={{ width: "250px", height: "125px" }}
-                                    />
-                                </div>
-                                <div className="col-md-4 p-5">
-                                    <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
-                                    <h5 className="Foot-cage-paragraph">
-                                        Includes Ball, Pitching Screen and Tee.
-                                    </h5>
-                                </div>
-                                <div className="col-md-2  p-5">
-                                    <h3 className="Foot-cage-price">
-                                        <h5>32.00</h5>
-                                    </h3>
-                                </div>
-
-                                <div className="col-md-2 p-5">
-                                    <button className="btn btn-sm btn-success" onClick={this.preference} name="Full Facility With Machine">Book</button>
+                                <div className="col-md-8 p-4">
+                                    <div className="row p-4">
+                                        <div className="col-md-6 ">
+                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h5 className="Foot-cage-paragraph">
+                                                Includes Ball, Pitching Screen and Tee.
+                                            </h5>
+                                        </div>
+                                        <div className="col-md-3">
+                                            <h3 className="Foot-cage-price text-center pt-2">
+                                                <h5>32.00</h5>
+                                            </h3>
+                                        </div>
+                                        <div className="col-md-3 text-center">
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
+                                        </div>
+                                    </div>
+                                    <hr id="hrline" className="mx-3 bg-success"/>
+                                    <div className="row p-4">
+                                        <div className="col-md-6">
+                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h5 className="Foot-cage-paragraph">
+                                                Includes Ball, Pitching Screen and Tee.
+                                            </h5>
+                                        </div>
+                                        <div className="col-md-3 text-center pt-2">
+                                            <h3 className="Foot-cage-price">
+                                                <h5>32.00</h5>
+                                            </h3>
+                                        </div>
+                                        <div className="col-md-3 text-center">
+                                            <button className="btn btn-sm btn-success  pt-2" onClick={this.preference} name="35 Foot Ground with Machine">Book</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="container-fluid px-0">
-                            <div
-                                className="row p-4 text-white text-center"
-                                style={{ backgroundColor: "#6351ce" }}
-                            >
-                                <div className="col-md-12">
-                                    <h3>Call or email us to reserve your cage!</h3>
+
+                        <div className="container mt-4">
+                            <div className="row" id="cage-row">
+                                <div className="col-md-4">
+                                    <img
+                                        className="img-fluid py-2"
+                                        src={cage1}
+                                        alt="/"
+
+                                    />
+                                </div>
+                                <div className="col-md-8 p-4">
+                                    <div className="row p-4">
+                                        <div className="col-md-6 ">
+                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h5 className="Foot-cage-paragraph">
+                                                Includes Ball, Pitching Screen and Tee.
+                                            </h5>
+                                        </div>
+                                        <div className="col-md-3">
+                                            <h3 className="Foot-cage-price text-center pt-2">
+                                                <h5>32.00</h5>
+                                            </h3>
+                                        </div>
+                                        <div className="col-md-3 text-center">
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
+                                        </div>
+                                    </div>
+                                    <hr id="hrline" className="mx-3 bg-success"/>
+                                    <div className="row p-4">
+                                        <div className="col-md-6">
+                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h5 className="Foot-cage-paragraph">
+                                                Includes Ball, Pitching Screen and Tee.
+                                            </h5>
+                                        </div>
+                                        <div className="col-md-3 text-center pt-2">
+                                            <h3 className="Foot-cage-price">
+                                                <h5>32.00</h5>
+                                            </h3>
+                                        </div>
+                                        <div className="col-md-3 text-center">
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground with Machine">Book</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="container pt-4 pb-4">
-                        <div className="row p-3" id="Book-cage">
-                            <div className="col-md-3">
-                                <h4 className="Contact-heading">Email</h4>
-                            </div>
-                            <div className="col-md-3">
-                                <h4 className="Contact-heading">
-                                    dingerstraining321@gmail.com
-                                </h4>
-                            </div>
-                        </div>
 
-                        <div className="row p-3 mt-3" id="Book-cage">
-                            <div className="col-md-3">
-                                <h4 className="Contact-heading">Contact Number</h4>
-                            </div>
-                            <div className="col-md-3">
-                                <h4 className="Contact-heading">321-266-5325</h4>
+                        <div className="container mt-4">
+                            <div className="row" id="cage-row">
+                                <div className="col-md-4">
+                                    <img
+                                        className="img-fluid py-2"
+                                        src={cage1}
+                                        alt="/"
+
+                                    />
+                                </div>
+                                <div className="col-md-8 p-4">
+                                    <div className="row p-4 ">
+                                        <div className="col-md-6 ">
+                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h5 className="Foot-cage-paragraph">
+                                                Includes Ball, Pitching Screen and Tee.
+                                            </h5>
+                                        </div>
+                                        <div className="col-md-3">
+                                            <h3 className="Foot-cage-price text-center pt-2">
+                                                <h5>32.00</h5>
+                                            </h3>
+                                        </div>
+                                        <div className="col-md-3 text-center">
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
+                                        </div>
+                                    </div>
+                                    <hr id="hrline" className="mx-3 bg-success"/>
+                                    <div className="row p-4">
+                                        <div className="col-md-6">
+                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h5 className="Foot-cage-paragraph">
+                                                Includes Ball, Pitching Screen and Tee.
+                                            </h5>
+                                        </div>
+                                        <div className="col-md-3 text-center pt-2">
+                                            <h3 className="Foot-cage-price">
+                                                <h5>32.00</h5>
+                                            </h3>
+                                        </div>
+                                        <div className="col-md-3 text-center">
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground with Machine">Book</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -524,7 +485,7 @@ class Rentcage extends React.Component {
                                                 this.state.slots.map((list) => {
                                                     return (
                                                         <ul className="list-group">
-                                                             <input type="text" className="btn  btn-success text-weight-bold"  value={list} onClick={this.timings} />
+                                                            <input type="text" className="btn  btn-success text-weight-bold" value={list} onClick={this.timings} />
                                                         </ul>
                                                     )
                                                 })
@@ -535,15 +496,15 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to='/add-cart' ><button className="btn btn-success mt-5"  onClick={this.addingcart}>Add to card</button></Link>
+                        <Link to='/add-cart' ><button className="btn btn-success mt-5" onClick={this.addingcart}>Add to card</button></Link>
                         <button className="btn btn-danger mt-5" onClick={this.modal_deactive}>close</button>
                     </Modal.Body>
 
                 </Modal>
-                
-{
-    console.log(this.state.Data.selectedSlot)
-}
+
+                {
+                    console.log(this.state.Data.selectedSlot)
+                }
             </>
         )
     }

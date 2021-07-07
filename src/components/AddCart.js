@@ -12,14 +12,14 @@ class Addcard extends React.Component {
     render() {
         return (
             <>
-            <pre>{JSON.stringify(this.props.sending)}</pre>
+            
                 <section className="py-5" id="addcartsection" >
                     <div className="container" id="addcard" data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000">
                         <div className="row">
                             <div className="col-md-8">
-                                <h2 className="py-3 pl-4 font-weight-bold" style={{ color: "#6351ce" }}>Shopping Cart <i class="fa fa-shopping-cart animate__animated animate__backInRight animate__slow" aria-hidden="true"></i>
+                                <h2 className="py-3 pl-4 font-weight-bold" style={{ color: "#40ad6d" }}>Shopping Cart <i class="fa fa-shopping-cart animate__animated animate__backInRight animate__slow" aria-hidden="true"></i>
                                 </h2>
                                 <hr id="hrline"></hr>
                                 <div className="row">

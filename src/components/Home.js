@@ -50,7 +50,7 @@ class Home extends React.Component {
                 <section>
                     <div className="container-fluid">
                         <div className="row">
-                            <div className="col-md-12 text-center p-3" style={{ backgroundColor: ' #6351ce' }}><h1 id="Basball" data-aos="slide-right" >Baseball And Softball Camp Registration Is Now Open !</h1></div>
+                            <div className="col-md-12 text-center p-3" style={{ backgroundColor: ' #40ad6d' }}><h1 id="Basball" className="animate__animated animate__">Baseball And Softball Camp Registration Is Now Open !</h1></div>
                         </div>
                     </div>
                 </section>
@@ -91,7 +91,7 @@ class Home extends React.Component {
                 <section>
                     <div className="container-fluid">
                         <div className="row">
-                            <div className="col-md-12 text-center p-3" style={{ backgroundColor: ' #6351ce' }}><h1 id="Basball" data-aos="slide-right" >We love our local baseball and softball players.</h1></div>
+                            <div className="col-md-12 text-center p-3" style={{ backgroundColor: '#40ad6d' }}><h1 id="Basball" data-aos="slide-right" >We love our local baseball and softball players.</h1></div>
                         </div>
                     </div>
                 </section>

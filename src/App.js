@@ -34,7 +34,8 @@ class App extends React.Component {
           <NavBar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/rentcage" component={RentCage} data={this.receiveData}/>
+            <Route exact path="/rentcage" component={RentCage} 
+            data={this.receiveData}/>
             <Route exact path="/add-cart" component={Addcard} />
             <Route exact path="/payment" component={Payment} />
           </Switch>
