@@ -4,11 +4,30 @@ import { Link } from 'react-router-dom'
 class Addcard extends React.Component {
     componentDidMount(props) {
         window.scrollTo(0, 0)
-       console.log(this.props.location.transfer)
+        // this.setState(
+        //     {
+        //         // Arena:this.props.location.state.cardData.Arena,
+        //         // Amount:this.props.location.state.cardData.Amount,
+        //         // // selectedDay:this.props.location.transfer.cardData.selectedDay,
+        //         // // selectedSlot:this.props.location.transfer.cardData.selectedSlot,
+
+        //     }
+        // )
+        // console.log(this.props.location.state)
     }
     constructor(props)
     {
-        super(props)
+        super(props);
+        // let date_obj=(this.props.location.state.cardData.selectedDay)
+        
+        this.state=
+        {
+            arena:this.props.location.transfering.cardData.Arena,
+            amount:this.props.location.transfering.cardData.Amount,
+            date:this.props.location.transfering.cardData.selectedDay,
+           time:this.props.location.transfering.cardData.selectedSlot
+        }
+// console.log(date_obj)
     }
     render() {
         return (
@@ -27,28 +46,15 @@ class Addcard extends React.Component {
                                     <div className="col mx-4">
                                         <div className="d-flex justify-content-between align-items-center ">
                                             <div>
-                                                <h4 className="mr-4">35 Foot cage</h4>
-                                                <p>Machine included</p>
+                                                <h4 className="mr-4">
+                                                   {this.state.arena}
+                                                </h4>
+                                                <p>{this.state.amount}</p>
+                                                <p>{this.state.date.toLocaleDateString()}</p>
                                             </div>
                                             <div>
-                                                <h4 className="font-weight-bold">45</h4>
-                                            </div>
-                                            <div>
-                                                <h3><i className="fa fa-times text-danger " aria-hidden="true"></i></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr id="hrline"></hr>
-                                <div className="row">
-                                    <div className="col mx-4">
-                                        <div className="d-flex justify-content-between align-items-center ">
-                                            <div>
-                                                <h4 className="mr-4">35 Foot cage</h4>
-                                                <p>Machine included</p>
-                                            </div>
-                                            <div>
-                                                <h4 className="font-weight-bold">45</h4>
+                                                {/* <h4 className="font-weight-bold">{this.state.selectedSlot}</h4> */}
+                                                {/* <p>{this.state}</p> */}
                                             </div>
                                             <div>
                                                 <h3><i className="fa fa-times text-danger " aria-hidden="true"></i></h3>
@@ -57,40 +63,10 @@ class Addcard extends React.Component {
                                     </div>
                                 </div>
                                 <hr id="hrline"></hr>
-                                <div className="row">
-                                    <div className="col mx-4">
-                                        <div className="d-flex justify-content-between align-items-center ">
-                                            <div>
-                                                <h4 className="mr-4">35 Foot cage</h4>
-                                                <p>Machine included</p>
-                                            </div>
-                                            <div>
-                                                <h4 className="font-weight-bold">45</h4>
-                                            </div>
-                                            <div>
-                                                <h3><i className="fa fa-times text-danger " aria-hidden="true"></i></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr id="hrline"></hr>
-                                <div className="row">
-                                    <div className="col mx-4">
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h4 className="mr-4">35 Foot cage</h4>
-                                                <p>Machine included</p>
-                                            </div>
-                                            <div>
-                                                <h4 className="font-weight-bold">45</h4>
-                                            </div>
-                                            <div>
-                                                <h3><i className="fa fa-times text-danger " aria-hidden="true"></i></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr id="hrline"></hr>
+                                
+                                   
+                                
+                               
                                 <div className="row ">
                                     <div className="col">
                                         <h5 className="p-4">

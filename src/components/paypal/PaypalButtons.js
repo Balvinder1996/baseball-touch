@@ -53,7 +53,7 @@ class PaypalButton extends React.Component {
         return actions.order.create({
             purchase_units: [
                 {
-                    description: +"demo payment",
+                    description: +"Name",
                     amount: {
                         currency_code: "USD",
                         value: this.state.checkout_amount

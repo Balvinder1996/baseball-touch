@@ -501,7 +501,7 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to={{ pathname: '/add-cart', transfer: { "cardData": this.state.Data } }} className="btn btn-success mt-5" >Add to card</Link>
+                        <Link to={{ pathname: '/add-cart', transfering: { "cardData": this.state.Data } }} className="btn btn-success mt-5" >Add to card</Link>
                         <button className="btn btn-danger mt-5" onClick={this.modal_deactive}>close</button>
                     </Modal.Body>
 
