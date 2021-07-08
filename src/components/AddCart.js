@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link ,BrowserRouter as Router} from 'react-router-dom'
+import { withRouter } from 'react-router';
 
 class Addcard extends React.Component {
-    componentDidMount(props) {
+    componentDidMount(event) {
         window.scrollTo(0, 0)
+        
         // this.setState(
         //     {
         //         // Arena:this.props.location.state.cardData.Arena,
@@ -14,6 +16,7 @@ class Addcard extends React.Component {
         //     }
         // )
         // console.log(this.props.location.state)
+        
     }
     constructor(props)
     {
@@ -22,6 +25,7 @@ class Addcard extends React.Component {
         
         this.state=
         {
+            
             arena:this.props.location.transfering.cardData.Arena,
             amount:this.props.location.transfering.cardData.Amount,
             date:this.props.location.transfering.cardData.selectedDay,
