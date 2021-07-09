@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link } from 'react-router-dom';
-import img from '../../assets/paypal.gif'
+import img from '../../assets/paypal.gif';
+import tick from '../../assets/tick.gif'
 import scriptLoader from "react-async-script-loader";
 import axios from "axios";
 import { getImageListItemBarUtilityClass } from "@material-ui/core";
@@ -79,10 +80,10 @@ class PaypalButton extends React.Component {
             const paymentData = {
                 payerID: data.payerID,
                 orderID: data.orderID,
-                
+
 
             };
-            if (details.status=="COMPLETED") {
+            if (details.status == "COMPLETED") {
                 let DataUrl = `https://dingers-training.herokuapp.com/cage/booking`;
                 axios.post(DataUrl, this.state.Data).then((response) => {
                     console.log("success")
@@ -181,9 +182,29 @@ class PaypalButton extends React.Component {
 
                 {
                     paid && (
-                        <section className="my-5" id="addcartsection">
+                        <section className="py-5" id="addcartsection">
                             <div className="container">
-                                <div>fgj</div>
+                                <section className="py-5" id="addcartsection">
+                                    <div className="container">
+                                        <div className="row  d-flex justify-content-center" >
+                                            <div className='col-md-4 bg-white px-5' id="congrats">
+                                                <div className="text-center pt-2">
+                                                    <h2 className="py-3 pb-4">Congratulations !!!</h2>
+                                                    <img src={tick} width="95" height="95" />
+                                                    <p className="py-5">Your Booking is Confirmed and recorded.You can continue other booking successfully.
+                                                        <i class="fa fa-thumbs-up text-success px-2" aria-hidden="true"></i>
+
+                                                    </p>
+                                                </div>
+                                                <div className="pb-3">
+                                                    <h4><Link to="/"><i class="fa fa-home text-success px-3" aria-hidden="true"></i>
+                                                    </Link><span style={{ fontSize: "15px" }}>Back to home</span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
                             </div>
                         </section>
                     )

@@ -28,7 +28,7 @@ class Rentcage extends React.Component {
                 Arena: "",
                 Amount: 0,
                 selectedDay: null,
-                selectedSlot: ""
+                selectedSlot: "Time"
 
             }
         }
@@ -37,26 +37,7 @@ class Rentcage extends React.Component {
     componentDidMount() {
         AOS.init({ duration: 1700 });
     }
-    getData = () => {
-        let dataurl = 'https://dingers-training.herokuapp.com/availabiliy/check?date=2021-07-08&arena=1';
-        Axios.get(dataurl).then((response) => {
-            let Data = response.data.time
-            this.setState(
-                {
-                    ...this.state,
-                    slots: Data,
-
-                }
-            )
-        }).catch((error) => {
-            this.setState(
-                {
-                    ...this.state,
-                    errormsg: error
-                }
-            )
-        })
-    }
+   
 
 
     modal_active = () => {
@@ -97,6 +78,7 @@ class Rentcage extends React.Component {
         )
     }
     handleDayClick(day, { selected }) {
+        this.getData()
         this.setState({
             ...this.state,
             Data:
@@ -106,6 +88,7 @@ class Rentcage extends React.Component {
         });
     }
     timings = (event) => {
+       document.getElementById("addcard_button").disabled=false;
         this.setState(
             {
                 ...this.state,
@@ -117,13 +100,30 @@ class Rentcage extends React.Component {
             }
         )
     }
+    getData = () => {
+        let dataurl = 'https://dingers-training.herokuapp.com/availabiliy/check?date=2021-07-08&arena=1';
+        Axios.get(dataurl).then((response) => {
+            let Data = response.data.time
+            this.setState(
+                {
+                    ...this.state,
+                    slots: Data,
+
+                }
+            )
+        }).catch((error) => {
+            this.setState(
+                {
+                    ...this.state,
+                    errormsg: error
+                }
+            )
+        })
+    }
     
     render() {
         return (
             <>
-                
-
-                <button onClick={this.getData}>clickhere</button>
                 <section className="mt-5">
                     <div className="container-fluid">
                         <div className="row d-flex justify-content-center align-items-center">
@@ -304,7 +304,7 @@ class Rentcage extends React.Component {
                             style={{ backgroundColor: "#40ad6d" }}
                         >
                             <div className="col-md-12 text-center">
-                                <h3 id="dinger-heding">DINGERS CAGE RENTAL PRICE LIST</h3>
+                                <h3 id="dinger-heding">DINGERS CAGE RENTAL BOOKING CATALOGUE</h3>
                             </div>
                         </div>
 
@@ -313,7 +313,7 @@ class Rentcage extends React.Component {
                                 <div className="col-md-4 d-flex align-items-center">
                                     <img
                                         className="img-fluid py-2"
-                                        src={cage1}
+                                        src={cage3}
                                         alt="/"
 
                                     />
@@ -338,7 +338,7 @@ class Rentcage extends React.Component {
                                     <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h4 className="Foot-cage">35 Foot Cage (with machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Ball, Pitching Screen and Tee.
                                             </h5>
@@ -362,7 +362,7 @@ class Rentcage extends React.Component {
                                 <div className="col-md-4 d-flex align-items-center">
                                     <img
                                         className="img-fluid py-2"
-                                        src={cage1}
+                                        src={cage2}
                                         alt="/"
 
                                     />
@@ -370,7 +370,7 @@ class Rentcage extends React.Component {
                                 <div className="col-md-8 p-4">
                                     <div className="row p-4">
                                         <div className="col-md-6 ">
-                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h4 className="Foot-cage">70 Foot Cage (without machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Ball, Pitching Screen and Tee.
                                             </h5>
@@ -381,13 +381,13 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="70 Foot Ground without Machine">Book</button>
                                         </div>
                                     </div>
                                     <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h4 className="Foot-cage">70 Foot Cage (with machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Ball, Pitching Screen and Tee.
                                             </h5>
@@ -398,7 +398,7 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground with Machine">Book</button>
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="70 Foot Ground with Machine">Book</button>
                                         </div>
                                     </div>
                                 </div>
@@ -419,7 +419,7 @@ class Rentcage extends React.Component {
                                 <div className="col-md-8 p-4">
                                     <div className="row p-4 ">
                                         <div className="col-md-6 ">
-                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h4 className="Foot-cage">Full Facility (without machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Ball, Pitching Screen and Tee.
                                             </h5>
@@ -430,13 +430,13 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground without Machine">Book</button>
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="Full Facility Foot Ground without Machine">Book</button>
                                         </div>
                                     </div>
                                     <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
+                                            <h4 className="Foot-cage">Full Facility (with machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Ball, Pitching Screen and Tee.
                                             </h5>
@@ -447,7 +447,7 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="35 Foot Ground with Machine">Book</button>
+                                            <button className="btn btn-sm btn-success pt-2" onClick={this.preference} name="Full Facility Foot Ground with Machine">Book</button>
                                         </div>
                                     </div>
                                 </div>
@@ -461,36 +461,37 @@ class Rentcage extends React.Component {
 
 
                 <Modal size="lg" show={this.state.show}  >
-                    <Modal.Header className=" text-white" id="samecolor" ><span className=".modal"><h2 >Get Book Your court</h2></span></Modal.Header>
+                    <Modal.Header className=" text-white" id="samecolor" ><span className=".modal"><h2 >Book Your Cage</h2></span></Modal.Header>
                     <Modal.Body className=".modal text-center" >
                         <div className="card">
 
-                            <div className="card-body ">
+                            <div className="card-body mx-5">
                                 <div className="row">
-                                    <div className="col-md-8 d-flex justify-content-center">
+                                    <div className="col-md-6 d-flex justify-content-center" id="calender">
 
                                         <DayPicker
-                                            id="table1"
+                                            id="calender"
+                                            className="h5"
                                             selectedDays={this.state.Data.selectedDay}
                                             onDayClick={this.handleDayClick}
                                             disabledDays={[
                                                 {
-
                                                     before: new Date(),
                                                 },
                                             ]}
                                         />
                                     </div>
-                                    <div className="col-md-4 ">
+                                    <div className="col-md-6 text-center">
 
                                         <h3>Time slots</h3>
+                                        <p>{this.state.Data.selectedSlot}</p>
 
                                         <div id="slot-timings">
                                             {
                                                 this.state.slots.map((list) => {
                                                     return (
                                                         <ul className="list-group">
-                                                            <input type="text" className="btn  btn-success text-weight-bold" value={list} onClick={this.timings} />
+                                                            <input type="text" className="btn  btn-success text-weight-bold" value={list} onClick={this.timings} id="listing" />
                                                         </ul>
                                                     )
                                                 })
@@ -501,7 +502,7 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to={{ pathname: '/add-cart', transfering: { "cardData": this.state.Data } }} className="btn btn-success mt-5" >Add to card</Link>
+                        <Link to={{ pathname: '/add-cart', transfering: { "cardData": this.state.Data } }}><button className="btn btn-success mt-5" id="addcard_button" disabled>Add to card</button></Link>
                         <button className="btn btn-danger mt-5" onClick={this.modal_deactive}>close</button>
                     </Modal.Body>
 
