@@ -252,7 +252,7 @@ class PaypalButton extends React.Component {
                         </div>
 ​
                         <div className="row d-flex justify-content-center pb-5 ">
-                           <Link to="/rentcage"><button className="btn btn-primary" id="Done-btn">Done</button></Link>
+                           <Link to="/"><button className="btn btn-primary" id="Done-btn">Done</button></Link>
                         </div>
                     </div>
                 </div>

@@ -99,7 +99,7 @@ class Addcard extends React.Component {
                                 <div className="row ">
                                     <div className="col">
                                         <h5 className="p-4">
-                                            <Link to="/rentcage"><i class="fa fa-arrow-left pr-3 text-danger" aria-hidden="true"></i> </Link>Back to schedule
+                                            <Link to="/"><i class="fa fa-arrow-left pr-3 text-danger" aria-hidden="true"></i> </Link>Back to schedule
                                         </h5>
                                     </div>
                                 </div>

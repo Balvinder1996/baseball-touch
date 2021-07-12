@@ -37,6 +37,7 @@ class Rentcage extends React.Component {
     }
     componentDidMount() {
         AOS.init({ duration: 1700 });
+        window.scrollTo(0, 0);
     }
    
 
@@ -83,6 +84,7 @@ class Rentcage extends React.Component {
         );console.log(event.target.dataset.amount)
     }
     handleDayClick(day, { selected }) {
+        console.log(day)
         this.getData()
         let Day=day;
        let Year=Day.getFullYear();
@@ -98,7 +100,8 @@ class Rentcage extends React.Component {
                 selectedDay: day,
                 modifiedDate: slotTime.slice(0,10)
             }
-        });console.log(this.state.Data.modifiedDate)
+        });
+        console.log(this.state.Data.modifiedDate)
     }
     timings = (event) => {
         console.log(event);
@@ -525,11 +528,10 @@ class Rentcage extends React.Component {
 
                             <div className="card-body mx-5">
                                 <div className="row">
-                                    <div className="col-md-6 d-flex justify-content-center" id="calender">
+                                    <div className="col-md-6 d-flex justify-content-center">
 
                                         <DayPicker
                                             id="calender"
-                                            className="h5"
                                             selectedDays={this.state.Data.selectedDay}
                                             onDayClick={this.handleDayClick}
                                             disabledDays={[

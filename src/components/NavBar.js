@@ -16,10 +16,10 @@ class NavBar extends React.Component {
                         <div className="collapse navbar-collapse animate__animated animate__flipInX" id="navbarSupportedContent">
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item pl-3">
-                                    <Link className="nav-link active " to='/'>Home</Link>
+                                    <Link className="nav-link active " to='/Home' hidden>Home</Link>
                                 </li>
                                 <li className="nav-item   pl-3">
-                                    <Link className="nav-link " aria-current="page" to='/rentcage'>Rent A Cage</Link>
+                                    <Link className="nav-link " aria-current="page" to='/'>Rent A Cage</Link>
                                 </li>
                                 <li className="nav-item  pl-3">
                                     <Link className="nav-link  disabled" aria-current="page" to='/ourservices' hidden>Camp-Registration  </Link>

@@ -16,8 +16,8 @@ class App extends React.Component {
         <Router>
           <NavBar />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/rentcage" component={RentCage} />
+            <Route exact path="/Home" component={Home} />
+            <Route exact path="/" component={RentCage} />
             <Route exact path="/add-cart" component={Addcard} />
             <Route exact path="/payment" component={Payment} />
           </Switch>

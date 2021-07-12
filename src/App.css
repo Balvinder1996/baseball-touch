@@ -244,8 +244,10 @@ input:focus {
 }
 #calender
 {
-  background-color: #f0f0f0;
-  border-radius: 10%;
+  border: 2px solid black;
+  border-style: inset;
+  padding-top: 20px;
+  
 }
 #contactus-section{
   width: 100%;
@@ -269,4 +271,10 @@ input:focus {
 #listing
 {
   user-select: none;
+}
+@media (max-width: 1400px) {
+  #calender {
+    font-size: 8px !important;
+    border: 2px solid black;
+  }
 }
