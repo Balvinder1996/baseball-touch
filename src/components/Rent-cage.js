@@ -85,7 +85,6 @@ class Rentcage extends React.Component {
     }
     handleDayClick(day, { selected }) {
         console.log(day)
-        this.getData()
         let Day=day;
        let Year=Day.getFullYear();
        let Month=Day.getMonth()+1;
@@ -101,7 +100,10 @@ class Rentcage extends React.Component {
                 modifiedDate: slotTime.slice(0,10)
             }
         });
-        console.log(this.state.Data.modifiedDate)
+        console.log(slotTime.slice(0,10))
+        this.getData(slotTime.slice(0,10))
+
+      
     }
     timings = (event) => {
         console.log(event);
@@ -141,8 +143,8 @@ class Rentcage extends React.Component {
             }
         )
     }
-    getData = () => {
-        let dataurl = `https://dingers-training.herokuapp.com/availabiliy/check?date=${this.state.Data.modifiedDate}&arena=${this.state.Data.ArenaNo}`;
+    getData = (selected_date) => {
+        let dataurl = `https://dingers-training.herokuapp.com/availabiliy/check?date=${selected_date}&arena=${this.state.Data.ArenaNo}`;
         Axios.get(dataurl).then((response) => {
             let Data = response.data.time
             console.log(Data);
