@@ -1,14 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 #navigation_bar
 {
   background-color: #40ad6d;
+  font-family: 'Nunito', sans-serif !important;
+  font-weight: 800 !important;
+}
+.menu_active{
+  border-bottom: 2px solid white !important;
 }
 .table td
 {
   font-size:16px;
+  font-family: 'Nunito', sans-serif !important;
 }
 .table th
 {
   font-size: 20px;
+  font-family: 'Nunito', sans-serif !important;
 }
 
 .ground-img{
@@ -42,7 +50,8 @@
 #summary
 {
   background:#40ad6d;
-  color:honeydew
+  color:honeydew;
+  font-family: 'Nunito', sans-serif;
 }
 #addcartsection
 {
@@ -51,6 +60,7 @@
 .table4
 {
   background-color: #40ad6d;
+  
 }
 .table1
 {
@@ -62,7 +72,7 @@
 }
 #batting{
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 60px;
   letter-spacing: 5px;
  
@@ -72,10 +82,17 @@
 #Basball{
   color: white;
   letter-spacing: 3px;
+  font-family: 'Nunito', sans-serif;
+  
+}
+#Basball-heding{
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  font-weight: bold;
 }
 .paragraph{
   font-size: 25px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   letter-spacing: 3px;
 }
@@ -106,13 +123,14 @@
 .question{
   font-size: 28px;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   letter-spacing: 3px;
+  
 }
 .questiontwo{
   font-size: 28px;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
  
 }
 .section-six{
@@ -132,6 +150,7 @@
   border-left-style: none; 
   font-size: 1em;
   font-weight: 100;
+  font-family: 'Nunito', sans-serif;
   color: #000000;
 }
 
@@ -162,19 +181,20 @@ input:focus {
   box-shadow: 15px 15px 13px 6px rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%) !important;
 }
 .hed{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 30px;
  
  }
 
 .description{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 20px !important;
 }
 
 #successbtn{
   background-color: transparent !important;
   color: black;
+  font-family: 'Nunito', sans-serif;
   
   padding: 10px;
   padding-left: 65px;
@@ -187,7 +207,7 @@ input:focus {
   background-color: #76b440 !important;
 }
 #dinger-heding{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 #img-first{
   transition: 0.50s;
@@ -197,15 +217,15 @@ input:focus {
 }
  .Foot-cage{
    font-size: 18px;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Nunito', sans-serif;
  }
  .Foot-cage-paragraph{
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
  }
  .Foot-cage-price{
    font-size:22px;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Nunito', sans-serif;
  }
  #cage-row{
   box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px; 
@@ -214,15 +234,39 @@ input:focus {
 
 #book-btn{
   background-color: #40ad6d !important;
+  font-family: 'Nunito', sans-serif;
 }
 #Book-cage{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
 .Contact-heading{
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 #calender
 {
   background-color: #f0f0f0;
   border-radius: 10%;
+}
+#contactus-section{
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+#payment-container{
+  box-shadow: rgba(0, 0, 0, 0.35) 14px 18px 23px;
+  border-radius: 10PX;
+  border: 1px solid rgb(233, 224, 224);
+  font-family: 'Nunito', sans-serif;
+  color:#2d3436;
+  font-weight: bold;
+}
+#Done-btn{
+  background-color: #77b43f !important;
+  border-radius: 20px ;
+  padding-right: 80px ;
+  padding-left: 80px ;
+}
+#listing
+{
+  user-select: none;
 }

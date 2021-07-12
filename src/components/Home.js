@@ -22,7 +22,7 @@ class Home extends React.Component {
                         <Carousel.Item interval={1000}>
                             <img
                                 className="d-block w-100"
-                                src={a}
+                                src={b}
                                 alt="First slide"
                             />
 
@@ -30,12 +30,12 @@ class Home extends React.Component {
                         <Carousel.Item interval={1000}>
                             <img
                                 className="d-block w-100"
-                                src={b}
+                                src={a}
                                 alt="Second slide"
                             />
 
                         </Carousel.Item>
-                        <Carousel.Item>
+                        <Carousel.Item interval={1000}>
                             <img
                                 className="d-block w-100"
                                 src={c}
@@ -50,7 +50,7 @@ class Home extends React.Component {
                 <section>
                     <div className="container-fluid">
                         <div className="row">
-                            <div className="col-md-12 text-center p-3" style={{ backgroundColor: ' #40ad6d' }}><h1 id="Basball" className="animate__animated animate__">Baseball And Softball Camp Registration Is Now Open !</h1></div>
+                            <div className="col-md-12 text-center p-3" style={{ backgroundColor: ' #40ad6d' }}><h1 id="Basball" className="animate__animated animate__">Baseball And Softball Camp Booking Is Now Open !</h1></div>
                         </div>
                     </div>
                 </section>
@@ -58,7 +58,7 @@ class Home extends React.Component {
                 <section>
                     <div className="container-fluid">
                         <div className="row p-lg-3"  >
-                            <div className="col-md-6 p-lg-5 d-flex justify-content-center align-items-center p-4 text-center"><img src={logo} alt="/" width="400px" height="350px" id="logo" data-aos="fade-up" /></div>
+                            <div className="col-md-6 p-lg-5 d-flex justify-content-center align-items-center p-4 text-center"><img src={logo} alt="/" width="320px" height="280px" id="logo" data-aos="fade-up" /></div>
                             <div className="col-md-6 p-lg-5 d-flex justify-content-center align-items-center p-4 text-center"><h1 id="batting" data-aos="fade-up">BATTING CAGES</h1></div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ class Home extends React.Component {
                             <div className="col-md-6">
                                 <div>
                                     <h1 className="display-4">Book Your Cage</h1>
-                                    <h3>CAGE RENTALS - Rent a Batting cage or the entire baseball/softball facility by the hour! Great for the individual or group/team training.
+                                    <h3>Cage Rentals - Rent a Batting cage or the entire baseball, softball facility by the hour! Great for the individual or group, team training.
                                     </h3>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@ class Home extends React.Component {
                     </div>
                 </section>
 
-                <div className="paralax d-flex justify-content-center align-items-center"><h1 style={{ color: "white", fontWeight: 'bold' }} data-aos="zoom-in">DINGERS TRAINING BASEBALL AND SOFTBALL TRAINING CENTER</h1></div>
+                <div className="paralax d-flex justify-content-center align-items-center"><h1 data-aos="zoom-in" id="Basball-heding">DINGERS TRAINING BASEBALL AND SOFTBALL TRAINING CENTER</h1></div>
 
                 <section>
                     <div className="container-fluid">
@@ -96,7 +96,7 @@ class Home extends React.Component {
                     </div>
                 </section>
 
-                <div className="paralax-two d-flex justify-content-center align-items-center"><h1 style={{ color: "white", fontWeight: 'bold' }} data-aos="zoom-in">Located In Rockledge Florida</h1></div>
+                <div className="paralax-two d-flex justify-content-center align-items-center"><h1 data-aos="zoom-in" id="Basball-heding" >Located In Rockledge Florida</h1></div>
 
                 <section>
                     <div className="container-fluid section-six">

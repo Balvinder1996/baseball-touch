@@ -14,35 +14,35 @@ class NavBar extends React.Component {
                         </button>
 
                         <div className="collapse navbar-collapse animate__animated animate__flipInX" id="navbarSupportedContent">
-                            <ul className="navbar-nav ml-auto">
+                            <ul className="navbar-nav mr-auto">
                                 <li className="nav-item pl-3">
-                                    <Link className="nav-link active" to='/'>Home</Link>
+                                    <Link className="nav-link active " to='/'>Home</Link>
                                 </li>
                                 <li className="nav-item   pl-3">
                                     <Link className="nav-link " aria-current="page" to='/rentcage'>Rent A Cage</Link>
                                 </li>
                                 <li className="nav-item  pl-3">
-                                    <Link className="nav-link " aria-current="page" to='/ourservices'>Camp-Registration  </Link>
+                                    <Link className="nav-link  disabled" aria-current="page" to='/ourservices' hidden>Camp-Registration  </Link>
                                 </li>
                                 <li className="nav-item   pl-3">
-                                    <Link className="nav-link" aria-current="page" to='/aboutus'>Book Now</Link>
+                                    <Link className="nav-link disabled" aria-current="page" to='/aboutus' hidden>Book Now</Link>
                                 </li>
                                 <li className="nav-item   pl-3">
-                                    <Link className="nav-link " aria-current="page" to='/contact-us'>Our Facility</Link>
+                                    <Link className="nav-link disabled" aria-current="page" to='/contact-us' hidden>Our Facility</Link>
                                 </li>
                                 <li className="nav-item  pl-3">
-                                    <Link className="nav-link " aria-current="page" to='/contact-us'>Birthday Party Package</Link>
+                                    <Link className="nav-link disabled" aria-current="page" to='/contact-us' hidden>Birthday Party Package</Link>
                                 </li>
                                 <li className="nav-item  pl-3">
-                                    <Link className="nav-link " aria-current="page" to='/contact-us'>Medical Waiver</Link>
+                                    <Link className="nav-link disabled" aria-current="page" to='/contact-us' hidden>Medical Waiver</Link>
                                 </li>
                                 <li className="nav-item   pl-3">
-                                    <Link className="nav-link " aria-current="page" to='/contact-us'>Contact Us</Link>
+                                    <Link className="nav-link disabled" aria-current="page" to='/contact-us' hidden>Contact Us</Link>
                                 </li>
                             </ul>
 
                             <div className="ml-auto">
-                                <span><Link to='/add-cart' className="text-white h5 pl-3 ml-1 "><i className="fa fa-shopping-cart"></i> <i class="fa fa-user px-3" aria-hidden="true"></i>
+                                <span><Link to='/add-cart' className="text-white h5 pl-3 ml-1 disabled " hidden><i className="fa fa-shopping-cart"></i> <i class="fa fa-user px-3" aria-hidden="true"></i>
                                 </Link></span>
                             </div>
                         </div>

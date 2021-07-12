@@ -3,39 +3,46 @@ import { Link, BrowserRouter as Router } from 'react-router-dom'
 import { withRouter } from 'react-router';
 
 class Addcard extends React.Component {
-    componentDidMount(event) {
-        window.scrollTo(0, 0)
-
-        // this.setState(
-        //     {
-        //         // Arena:this.props.location.state.cardData.Arena,
-        //         // Amount:this.props.location.state.cardData.Amount,
-        //         // // selectedDay:this.props.location.transfer.cardData.selectedDay,
-        //         // // selectedSlot:this.props.location.transfer.cardData.selectedSlot,
-
-        //     }
-        // )
-        // console.log(this.props.location.state)
+    componentDidMount(props) {
+        window.scrollTo(0, 0);
+        // var checker = document.getElementById('exampleInputEmail1');
+        // var sendbtn = document.getElementById('sendbutton');
+        // checker.onchange = function () {
+        //     sendbtn.disabled = !this.checked;
+        // };
+        const Arena = sessionStorage.getItem('Arena');
+        const Amount = sessionStorage.getItem('Amount');
+        const Day = sessionStorage.getItem('selectedDay');
+        const time = sessionStorage.getItem('selectedSlot');
+        const arena_no = sessionStorage.getItem('arena_no')
+        this.setState(
+            {
+                arena: Arena,
+                amount: Amount,
+                date: Day,
+                time: time,
+                arena_no: arena_no
+            }
+        )
 
     }
     constructor(props) {
         super(props);
-        // let date_obj=(this.props.location.state.cardData.selectedDay)
+
 
         this.state =
         {
 
-            arena: this.props.location.transfering.cardData.Arena,
-            amount: this.props.location.transfering.cardData.Amount,
-            date: this.props.location.transfering.cardData.selectedDay,
-            time: this.props.location.transfering.cardData.selectedSlot
+            arena: "",
+            amount: "",
+            date: "",
+            time: "",
+            arena_no: ""
         }
-        // console.log(date_obj)
     }
-    checked=()=>
-    {
-        let button=document.getElementById('sendbutton');
-        button.disabled=!this.checked
+    checked = () => {
+        let button = document.getElementById('sendbutton');
+        button.disabled = !this.checked
     }
     render() {
         return (
@@ -69,7 +76,7 @@ class Addcard extends React.Component {
                                                                 <tr>
                                                                     <td> <h5>Date of Booking</h5></td>
                                                                     <td> <h5><i class="fa fa-arrow-circle-right text-light" aria-hidden="true"></i></h5></td>
-                                                                    <td> {this.state.date.toLocaleDateString()}</td>
+                                                                    <td> {this.state.date}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td> <h5>Timing of Booking</h5></td>
@@ -103,54 +110,24 @@ class Addcard extends React.Component {
 
                             <div className="col-md-4 bg-light" >
                                 <h3 className="text-center pt-4">Summary</h3>
-                                <hr id="hrline"></hr>
-                                <div className="row py-2">
-                                    <div className='col mx-3'>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <h5>35 Foot cage</h5>
-                                            <h5>Price</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row  py-3">
-                                    <div className='col mx-3'>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <h5>35 Foot cage</h5>
-                                            <h5>Price</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row  py-2">
-                                    <div className='col mx-3'>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <h5>35 Foot cage</h5>
-                                            <h5>Price</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row  py-3">
-                                    <div className='col mx-3'>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <h5>35 Foot cage</h5>
-                                            <h5>Price</h5>
-                                        </div>
-                                    </div>
-                                </div>
+                                <p className="px-3 mt-3">Welcome to Book Cage section . Please check the selection of ground and other preference before further process.
+                                    The Time slots are available for the One hour only.Please Check the Total and click checkbox.Happy Booking !!!
+                                </p>
                                 <hr id="hrline" ></hr>
                                 <div className="row">
                                     <div className='col mx-3'>
                                         <div className="d-flex justify-content-between align-items-center">
                                             <h4>Total</h4>
-                                            <h4>Price</h4>
+                                            <h4>${this.state.amount}</h4>
                                         </div>
                                     </div>
                                 </div>
                                 <form>
 
-                                    <input type="checkbox" id="exampleInputEmail1" aria-describedby="emailHelp" className="ml-2 mt-3" onChange={this.checked} />
-                                    <label for="exampleInputEmail1" class="form-label px-2">I have checked the Cages</label>
+                                    {/* <input type="checkbox" id="exampleInputEmail1" aria-describedby="emailHelp" className="ml-2 mt-3" onChange={this.checked} />
+                                    <label for="exampleInputEmail1" class="form-label px-2">I have checked the Cages</label> */}
                                     <div className="text-center my-4">
-                                        <Link to='/payment' id="sendbutton"><button className="btn btn-success text-center"  id="sendbutton">Check out</button></Link>
+                                        <Link to='/payment' id="sendbutton"><button className="btn btn-success text-center" id="sendbutton">Check out</button></Link>
                                     </div>
                                 </form>
                             </div>
