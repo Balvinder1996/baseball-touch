@@ -20,6 +20,7 @@ class PaypalButton extends React.Component {
             showButtons: false,
             paid: false,
             checkout_amount: props.amount,
+            button_status: false,
             Data:
             {
                 Arena: "",
@@ -51,7 +52,7 @@ class PaypalButton extends React.Component {
         const Day = sessionStorage.getItem('selectedDay');
         const time = sessionStorage.getItem('selectedSlot');
         const arena_no = sessionStorage.getItem('arena_no');
-        const booking_time=sessionStorage.getItem('booking_time')
+        const booking_time = sessionStorage.getItem('booking_time')
 
         this.setState(
             {
@@ -67,9 +68,9 @@ class PaypalButton extends React.Component {
                 pushData:
                 {
                     ...this.state.pushData,
-                    booking_time:booking_time,
-                    arena:arena_no,
-                    amount:Amount
+                    booking_time: booking_time,
+                    arena: arena_no,
+                    amount: Amount
                 }
 
             }
@@ -148,7 +149,17 @@ class PaypalButton extends React.Component {
             }
         ); console.log(this.state.pushData)
     }
+    submit = (event) => {
+        event.preventDefault();
+        this.setState(
+            {
+                ...this.state,
+                button_status: true
+            }
+        )
 
+
+    }
     render() {
         const { showButtons, paid } = this.state;
 
@@ -193,16 +204,17 @@ class PaypalButton extends React.Component {
                                     <div className="my-2">
                                         <h3 className="font-weight-bold mx-3">Other Details:-</h3>
                                         <div className="ml-5">
-                                            <form >
+                                            <form onSubmit={this.submit}>
                                                 <div>
                                                     <input type="text" name="name" class="formStyle" placeholder="Name (required)" value={this.state.pushData.name} onChange={this.userdetails} required />
                                                 </div>
                                                 <div>
-                                                    <input type="email" name="email" class="formStyle" placeholder="Email (required)" value={this.state.pushData.email} onChange={this.userdetails} />
+                                                    <input type="email" name="email" class="formStyle" placeholder="Email (required)" value={this.state.pushData.email} onChange={this.userdetails} required />
                                                 </div>
                                                 <div>
                                                     <input type="text" name="mobile_number" class="formStyle" placeholder="Number (required)" value={this.state.pushData.mobile_number} onChange={this.userdetails} required />
                                                 </div>
+                                                <input type="submit" value="submit" className="btn btn-sm btn-success" />
                                             </form>
                                         </div>
                                     </div>
@@ -218,15 +230,31 @@ class PaypalButton extends React.Component {
 
                                 <div className="col-md-6 bg-light pt-5">
                                     <div className="text-center mt-3">
-                                        <h3 className="font-weight-bold">Payment Modes:-</h3>
+                                        <h2 className="font-weight-bold text-success">Payment Modes:-</h2>
                                         <div id="fixed-height" className="mt-5">
                                             <div >
                                                 <img src={img} className="img-fluid" alt="/" />
                                             </div>
-                                            <PayPalButton
-                                                createOrder={(data, actions) => this.createOrder(data, actions)}
-                                                onApprove={(data, actions) => this.onApprove(data, actions)}
-                                            />
+
+                                            {
+                                                this.state.button_status ?
+                                                    <React.Fragment>
+                                                        <div className="mt-3">
+                                                           <p className="text-success mt-1">Please select the mode of payment for proceed further.</p> 
+                                                        <PayPalButton
+                                                            createOrder={(data, actions) => this.createOrder(data, actions)}
+                                                            onApprove={(data, actions) => this.onApprove(data, actions)}
+
+                                                        />
+
+                                                        </div>
+                                                    </React.Fragment>
+                                                    :
+                                                    <div className="mt-3 pt-5 text-success">
+                                                        <h3>Please fill and submit your details first to proceed the payment.</h3>
+                                                    </div>
+                                            }
+
                                         </div>
                                     </div>
                                 </div>
@@ -240,23 +268,23 @@ class PaypalButton extends React.Component {
                 {
                     paid && (
                         <div className="container-fluid">
-                <div className="row d-flex justify-content-center align-items-center p-4">
-                    <div className="col-md-4 " id="payment-container">
-                        <div className="row d-flex justify-content-center pt-5">
-                            <img src={succes} alt="/" style={{width:'126px',height:'102px'}} />
+                            <div className="row d-flex justify-content-center align-items-center p-4">
+                                <div className="col-md-4 " id="payment-container">
+                                    <div className="row d-flex justify-content-center pt-5">
+                                        <img src={succes} alt="/" style={{ width: '126px', height: '102px' }} />
+                                    </div>
+
+                                    <div className="row d-flex justify-content-center p-5 text-center">
+                                        <h3>Cogratulations</h3>
+                                        <p>Your payment is received and booking is confirmed.<br />Thank you for choosing Dinger!!!</p>
+                                    </div>
+
+                                    <div className="row d-flex justify-content-center pb-5 ">
+                                        <Link to="/"><button className="btn btn-primary" id="Done-btn">Done</button></Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-​
-                        <div className="row d-flex justify-content-center p-5 text-center">
-                            <h3>Cogratulations</h3>
-                            <p>Your payment is received and booking is confirmed.<br/>Thank you for choosing Dinger!!!</p>
-                        </div>
-​
-                        <div className="row d-flex justify-content-center pb-5 ">
-                           <Link to="/"><button className="btn btn-primary" id="Done-btn">Done</button></Link>
-                        </div>
-                    </div>
-                </div>
-            </div>  
                     )
                 }
             </div >

@@ -166,7 +166,7 @@ input:focus {
 }
 #fixed-height
 {
-  height: 580px;
+  height: 650px;
   overflow-y: scroll;
 }
 #slot-timings

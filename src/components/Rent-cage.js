@@ -12,7 +12,10 @@ import Axios from 'axios'
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import './calender.css'
+import {  toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 class Rentcage extends React.Component {
     constructor(props) {
@@ -108,6 +111,13 @@ class Rentcage extends React.Component {
     timings = (event) => {
         console.log(event);
        document.getElementById("addcard_button").disabled=false;
+       let non_selected_time = document.getElementsByClassName("btn  btn-success text-weight-bold")
+    //    for (let i = 0; i < non_selected_time.length; i++) {
+        // non_selected_time[i].className = "btn text-weight-bold";
+    //   }
+    //    event.target.className ="btn  btn-success text-weight-bold";
+
+
        console.log(this.state.Data)
     //     new Date(`${this.state.Data.modifiedDate.slice(0,10)} ${event.value}`).toISOString()
        console.log(`${this.state.Data.modifiedDate.slice(0,10)} ${event.target.value}`)
@@ -125,7 +135,13 @@ class Rentcage extends React.Component {
        Axios.post(Data_check,booking_status_payload).then((response)=>
        {
            if(response.status == 404 ){
-               window.alert("Slot not available")
+               window.alert("Slot not available");
+               this.setState(
+                   {
+                       ...this.state,
+                       slots:[]
+                   }
+               )
            }
            console.log("completed the task")
        }).catch((error)=>
@@ -156,7 +172,8 @@ class Rentcage extends React.Component {
 
                 }
             )} else{
-                window.alert("No slots available on selected dates please select something else.")
+                
+                this.notify()
             }
         }).catch((error) => {
             this.setState(
@@ -182,11 +199,22 @@ class Rentcage extends React.Component {
         storage.setItem('booking_time', new Date(adding).toISOString());
 
     }
+     notify = ()=>{ 
+        
+        toast.error('slots not found...')
+        // default notification
+        toast('Please select another date')
+           
+    }
     
     render() 
     {
         return (
             <>
+             <div className="GeeksforGeeks">
+             <button onClick={this.notify}>Click Me!</button>
+            </div>
+                    
                 <section className="mt-5">
                     <div className="container-fluid">
                         <div className="row d-flex justify-content-center align-items-center">
