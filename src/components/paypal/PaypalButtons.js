@@ -212,7 +212,7 @@ class PaypalButton extends React.Component {
                                                     <input type="email" name="email" class="formStyle" placeholder="Email (required)" value={this.state.pushData.email} onChange={this.userdetails} required />
                                                 </div>
                                                 <div>
-                                                    <input type="text" name="mobile_number" class="formStyle" placeholder="Number (required)" value={this.state.pushData.mobile_number} onChange={this.userdetails} required />
+                                                    <input type="number" name="mobile_number" class="formStyle" placeholder="Number (required)" value={this.state.pushData.mobile_number} onChange={this.userdetails} required />
                                                 </div>
                                                 <input type="submit" value="submit" className="btn btn-sm btn-success" />
                                             </form>

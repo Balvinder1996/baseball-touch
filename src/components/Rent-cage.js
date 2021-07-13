@@ -58,6 +58,7 @@ class Rentcage extends React.Component {
             {
                 ...this.state,
                 show: false,
+                slots:[],
                 Data:
                 {
                     Arena: "",
@@ -87,42 +88,59 @@ class Rentcage extends React.Component {
         );console.log(event.target.dataset.amount)
     }
     handleDayClick(day, { selected }) {
-        console.log(day)
-        let Day=day;
-       let Year=Day.getFullYear();
-       let Month=Day.getMonth()+1;
-       let Date1=Day.getDate();
-       let slotTime_demo=new Date(`${Year}-${Month}-${Date1}`);
-       let slotTime=slotTime_demo.toISOString()
+        
+        let tarik=new Date().toISOString().slice(0,10)
+        console.log(`this is ${tarik}`);
+        console.log(day.toISOString())
+        if(day.toISOString().slice(0,10) >= tarik)
+        {
+            
+            console.log(day)
+            let Day=day;
+           let Year=Day.getFullYear();
+           let Month=Day.getMonth()+1;
+           let Date1=Day.getDate();
+           let slotTime_demo=new Date(`${Year}-${Month}-${Date1}`);
+           let slotTime=slotTime_demo.toISOString()
+        
+            this.setState({
+                ...this.state,
+                Data:
+                {   ...this.state.Data,
+                    selectedDay: day,
+                    modifiedDate: slotTime.slice(0,10)
+                }
+            });
+            console.log(slotTime.slice(0,10))
+            this.getData(slotTime.slice(0,10))
     
-        this.setState({
-            ...this.state,
-            Data:
-            {   ...this.state.Data,
-                selectedDay: day,
-                modifiedDate: slotTime.slice(0,10)
-            }
-        });
-        console.log(slotTime.slice(0,10))
-        this.getData(slotTime.slice(0,10))
-
-      
+        }
+        else
+        {
+            this.setState
+            (
+                {
+                    slots:[]
+                }
+            )
+        }
     }
     timings = (event) => {
         console.log(event);
        document.getElementById("addcard_button").disabled=false;
        let non_selected_time = document.getElementsByClassName("btn  btn-success text-weight-bold")
-    //    for (let i = 0; i < non_selected_time.length; i++) {
-        // non_selected_time[i].className = "btn text-weight-bold";
-    //   }
-    //    event.target.className ="btn  btn-success text-weight-bold";
 
 
        console.log(this.state.Data)
-    //     new Date(`${this.state.Data.modifiedDate.slice(0,10)} ${event.value}`).toISOString()
+
+       let dheeraj = `${this.state.Data.modifiedDate.slice(0,10)} ${event.target.value}`;
+        let ayush = new Date(`${dheeraj}`).toISOString("en-US", {timeZone: "UTC"})
+    //    let prateek = new Date(`${aayush}`).toISOString;
+    //    console.log(`${prateek} is is `)
+    
        console.log(`${this.state.Data.modifiedDate.slice(0,10)} ${event.target.value}`)
        let booking_status_payload = {
-           "booking_time": `${this.state.Data.modifiedDate.slice(0,10)} ${event.target.value}`     ,
+           "booking_time": ayush     ,
            "arena":this.state.Data.ArenaNo,
            "name":"test",
            "email":"test@gtes.vom",
@@ -134,18 +152,16 @@ class Rentcage extends React.Component {
        let Data_check=`https://dingers-training.herokuapp.com/cage/booking-status`;
        Axios.post(Data_check,booking_status_payload).then((response)=>
        {
-           if(response.status == 404 ){
-               window.alert("Slot not available");
-               this.setState(
-                   {
-                       ...this.state,
-                       slots:[]
-                   }
-               )
-           }
+           console.log(response)
+         
            console.log("completed the task")
        }).catch((error)=>
        {
+        if(error.response.status == 400 ){
+            this.notify('No Cage is available on this date.');
+            document.getElementById("addcard_button").disabled=true;
+         
+        }
            console.error(error)
        })
         this.setState(
@@ -173,7 +189,13 @@ class Rentcage extends React.Component {
                 }
             )} else{
                 
-                this.notify()
+                this.notify('No Cage is available on this date.')
+                this.setState(
+                    {
+                        ...this.state,
+                        slots:[]
+                    }
+                )
             }
         }).catch((error) => {
             this.setState(
@@ -199,11 +221,11 @@ class Rentcage extends React.Component {
         storage.setItem('booking_time', new Date(adding).toISOString());
 
     }
-     notify = ()=>{ 
+     notify = (message)=>{ 
         
-        toast.error('slots not found...')
+        toast.error(message)
         // default notification
-        toast('Please select another date')
+        
            
     }
     
@@ -211,9 +233,7 @@ class Rentcage extends React.Component {
     {
         return (
             <>
-             <div className="GeeksforGeeks">
-             <button onClick={this.notify}>Click Me!</button>
-            </div>
+            
                     
                 <section className="mt-5">
                     <div className="container-fluid">
