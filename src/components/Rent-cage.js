@@ -99,7 +99,7 @@ class Rentcage extends React.Component {
             console.log(Day)
             let Year = Day.getFullYear();
             let Month = Day.getMonth() + 1;
-            let Date1 = Day.getDate() ;
+            let Date1 = Day.getDate() -1 ;
             let slotTime_demo = new Date(`${Year}-${Month}-${Date1}`);
             console.log(slotTime_demo.setDate(slotTime_demo.getDate() + 1))
             let slotTime = slotTime_demo.toISOString()
@@ -617,8 +617,8 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to='add-cart' onClick={this.sessions}><button className="btn btn-success mt-5" id="addcard_button" disabled>Add to card</button></Link>
-                        <button className="btn btn-danger mt-5" onClick={this.modal_deactive}>close</button>
+                        <button className="btn  mt-5" id="addcard_button" disabled><Link to='add-cart' onClick={this.sessions} id="addcard_button_link" className="font-weight-bold" >Add to card</Link></button>   
+                        <button className="btn  mt-5" onClick={this.modal_deactive} id="close">close</button>
                     </Modal.Body>
 
                 </Modal>

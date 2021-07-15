@@ -70,17 +70,17 @@ class Addcard extends React.Component {
                                                             <tbody>
                                                                 <tr>
                                                                     <td> <h5>Type of Arena</h5></td>
-                                                                    <td> <h5><i class="fa fa-arrow-circle-right  text-danger        " aria-hidden="true"></i></h5></td>
+                                                                    <td> <h5><i class="fa fa-arrow-circle-right  text-danger " aria-hidden="true"></i></h5></td>
                                                                     <td> {this.state.arena}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td> <h5>Date of Booking</h5></td>
-                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-danger     " aria-hidden="true"></i></h5></td>
+                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-danger " aria-hidden="true"></i></h5></td>
                                                                     <td> {this.state.date}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td> <h5>Timing of Booking</h5></td>
-                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-danger     " aria-hidden="true"></i></h5></td>
+                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-danger " aria-hidden="true"></i></h5></td>
                                                                     <td> {this.state.time}</td>
                                                                 </tr>
                                                             </tbody>

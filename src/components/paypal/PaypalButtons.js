@@ -168,42 +168,47 @@ class PaypalButton extends React.Component {
 
                 {showButtons && (
 
-                    <section className="py-5 bg-light" id="samecolor">
+                    <section className="py-5 " id="samecolor">
 
-                        <div className="container bg-white" id="payment_container">
-                            <div className="row">
-                                <div className="col-md-6 pl-5 pt-4">
+                        <div className="container" >
+                            <div className="row mx-5 bg-white" id="payment_container">
+                                <div className="col-md-6 pl-5 pt-2">
                                     <div className="my-2" >
-                                        <h2 className="font-weight-bold " style={{ color: "#40ad6d" }}>Order Summary</h2>
+                                        <h4 className="font-weight-bold " >Booking Summary</h4>
                                     </div>
                                     <hr id="hrline" />
-                                    <div className="mt-3">
-                                        <table className="table my-2 table-hover table4 text-center ">
-                                            <tbody>
-                                                <tr>
-                                                    <td><h5>Ground preference</h5></td>
-                                                    <td><h5>{this.state.Data.Arena}</h5></td>
-                                                </tr>
+                                    
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <div className="mt-1">
+                                                <table className=" table table-hover table4 text-center ">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Ground preference</td>
+                                                            <td>{this.state.Data.Arena}</td>
+                                                        </tr>
 
-                                                <tr>
-                                                    <td><h5>Amount</h5></td>
-                                                    <td><h5>{this.state.Data.Amount}</h5></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><h5>Date Slot</h5></td>
-                                                    <td><h5>{this.state.Data.Day}</h5></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><h5>Time Slot</h5></td>
-                                                    <td><h5>{this.state.Data.Time}</h5></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                        <tr>
+                                                            <td>Amount</td>
+                                                            <td>{this.state.Data.Amount}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Date Slot</td>
+                                                            <td>{this.state.Data.Day}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Time Slot</td>
+                                                            <td>{this.state.Data.Time}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
                                     <hr id="hrline" />
-                                    <div className="my-2">
-                                        <h3 className="font-weight-bold mx-3">Other Details:-</h3>
-                                        <div className="ml-5">
+                                    <div>
+                                        <h5 className="font-weight-bold mx-3">Other Details:-</h5>
+                                        <div className="ml-4">
                                             <form onSubmit={this.submit}>
                                                 <div>
                                                     <input type="text" name="name" class="formStyle" placeholder="Name (required)" value={this.state.pushData.name} onChange={this.userdetails} required />
@@ -214,24 +219,24 @@ class PaypalButton extends React.Component {
                                                 <div>
                                                     <input type="number" name="mobile_number" class="formStyle" placeholder="Number (required)" value={this.state.pushData.mobile_number} onChange={this.userdetails} required />
                                                 </div>
-                                                <input type="submit" value="submit" className="btn btn-sm " id="submit" />
+                                                <input type="submit" value="submit" className="btn btn-sm font-weight-bold" id="submit" />
                                             </form>
                                         </div>
                                     </div>
-                                    <hr id="hrline" />
+                                    
 
-                                    <div className=" ml-3 py-4">
+                                    <div className=" pt-3 pb-3">
 
-                                        <Link to="add-cart"><i class="fa fa-arrow-left px-3 text-danger" aria-hidden="true"></i></Link>  Back to Add to card...
+                                        <Link to="add-cart"><i class="fa fa-arrow-left px-3 text-danger pb-1" aria-hidden="true"></i></Link>  Back to Add to card...
                                     </div>
                                 </div>
 
                                 {/* Payment methods */}
 
-                                <div className="col-md-6 bg-light pt-5">
+                                <div className="col-md-6 bg-light">
                                     <div className="text-center mt-3">
-                                        <h2 className="font-weight-bold text-success">Payment Modes:-</h2>
-                                        <div id="fixed-height" className="mt-5">
+                                        <h4 className="font-weight-bold ">Payment Modes:-</h4>
+                                        <div >
                                             <div >
                                                 <img src={img} className="img-fluid" alt="/" />
                                             </div>
@@ -239,18 +244,18 @@ class PaypalButton extends React.Component {
                                             {
                                                 this.state.button_status ?
                                                     <React.Fragment>
-                                                        <div className="mt-3">
-                                                           <p className="text-success mt-1">Please select the mode of payment for proceed further.</p> 
-                                                        <PayPalButton
-                                                            createOrder={(data, actions) => this.createOrder(data, actions)}
-                                                            onApprove={(data, actions) => this.onApprove(data, actions)}
+                                                        <div className="mt-3" id="fixed-height">
+                                                            
+                                                            <PayPalButton
+                                                                createOrder={(data, actions) => this.createOrder(data, actions)}
+                                                                onApprove={(data, actions) => this.onApprove(data, actions)}
 
-                                                        />
+                                                            />
 
                                                         </div>
                                                     </React.Fragment>
                                                     :
-                                                    <div className="mt-3 pt-5 text-success">
+                                                    <div className="mt-3 pt-5 ">
                                                         <h3>Please fill and submit your details first to proceed the payment.</h3>
                                                     </div>
                                             }
@@ -276,11 +281,11 @@ class PaypalButton extends React.Component {
 
                                     <div className="row d-flex justify-content-center p-5 text-center">
                                         <h3>Cogratulations</h3>
-                                        <p>Your payment is received and booking is confirmed.<br />Thank you for choosing Dinger!!!</p>
+                                        <p>Your payment is received and booking is confirmed.<br />Thank you for choosing Dingers Training Center!!!</p>
                                     </div>
 
                                     <div className="row d-flex justify-content-center pb-5 ">
-                                        <Link to="/"><button className="btn btn-primary" id="Done-btn">Done</button></Link>
+                                        <Link to="/"><button className="btn " id="Done-btn">Done</button></Link>
                                     </div>
                                 </div>
                             </div>
