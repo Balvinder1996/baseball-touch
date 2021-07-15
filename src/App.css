@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 #navigation_bar
 {
-  background-color: #40ad6d;
+  background-color: white;
   font-family: 'Nunito', sans-serif !important;
-  font-weight: 800 !important;
+  font-weight: 500 !important;
+  shadow: none !important;
 }
 .menu_active{
-  border-bottom: 2px solid white !important;
+  border-bottom: 2px solid black !important;
+  
 }
+.nav-link{
+  color: black !important;
+}
+
 .table td
 {
   font-size:16px;
@@ -39,13 +46,17 @@
 }
 #hrline
 {
-  border-bottom: 1px solid rgb(0, 0, 0);
-  
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  opacity: 30%;
+
 }
 #hrline1
 {
-  border-bottom: 1px solid rgb(5, 5, 5);
-  
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  opacity: 30%;
+
 }
 #summary
 {
@@ -118,9 +129,6 @@
   
 }
 .question{
-  font-size: 28px;
-  font-weight: bold;
-  font-family: 'Nunito', sans-serif;
   letter-spacing: 3px;
   
 }
@@ -201,12 +209,45 @@ input:focus {
   border-radius:32px;
   border: 1px solid #76b440;
 }
-#successbtn:hover{
+#successbtn:hover{  
   color: white;
   background-color: #76b440 !important;
 }
 #dinger-heding{
-  font-family: 'Nunito', sans-serif;
+  color: black;
+  font-size: 20px;
+  line-height: 1.4;  
+  font-family: 'Archivo Black', sans-serif;
+  
+}
+.Contact_info{
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgb(89, 89, 89);
+  font-family: 'Montserrat', sans-serif; 
+  
+}
+.Contact_info1{
+  font-size: 22px;
+  color: rgb(89, 89, 89);
+  font-family: 'Montserrat', sans-serif;
+}
+.footer_content{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgb(89, 89, 89);
+  font-family: 'Montserrat', sans-serif; 
+}
+.footer_content_section{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgb(89, 89, 89);
+  font-family: 'Montserrat', sans-serif; 
+  border-bottom: 1px solid red;
+  margin: 30px;
 }
 #img-first{
   transition: 0.50s;
@@ -216,18 +257,25 @@ input:focus {
 }
  .Foot-cage{
    font-size: 18px;
-   font-family: 'Nunito', sans-serif;
- }
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 500;
+}
+
  .Foot-cage-paragraph{
   font-size: 16px;
-  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgb(94, 94, 94);
+  font-family: 'Montserrat', sans-serif;
  }
  .Foot-cage-price{
-   font-size:22px;
-   font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgb(94, 94, 94);
+  font-family: 'Montserrat', sans-serif;
  }
  #cage-row{
-  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px; 
   transition: 0.10s;
 }
 
@@ -289,9 +337,15 @@ input:focus {
   box-shadow: rgba(170, 169, 169, 0.8) 0px 30px 60px -12px inset, rgba(41, 200, 82, 1) 0px 18px 36px -18px inset;
    border-radius: 5px;
 }
+.Rent_img{
+  width: 200px;
+  height: 100px;
+}
+
 #sendbutton
 {
   color:red;
+
   background-color: white;
   box-shadow: inset;
   border-radius: 30px;
@@ -302,6 +356,7 @@ input:focus {
   background-color: rgb(194, 43, 43);
   color:white;
   border-radius: 30px;
+
 }
 #submit
 {
