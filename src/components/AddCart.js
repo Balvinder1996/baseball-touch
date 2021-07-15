@@ -53,8 +53,8 @@ class Addcard extends React.Component {
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000">
                         <div className="row px-5">
-                            <div className="col-md-8 text-white" id="addcard">
-                                <h2 className="py-3 pl-4 font-weight-bold" >Booking Cart<i class="fa fa-shopping-cart animate__animated animate__backInRight animate__slow" aria-hidden="true"></i>
+                            <div className="col-md-8 " id="addcard">
+                                <h2 className="py-3 pl-4 font-weight-bold" >Booking Reservation
                                 </h2>
                                 <hr id="hrline1"></hr>
                                 <div className="row">
@@ -62,25 +62,25 @@ class Addcard extends React.Component {
 
 
                                         <div className="row ">
-                                            <div className="col text-center text-white">
+                                            <div className="col text-center ">
                                                 <h2>Description</h2>
                                                 <div className="row pt-4">
                                                     <div className="col">
-                                                        <table className="table text-white">
+                                                        <table className="table ">
                                                             <tbody>
                                                                 <tr>
                                                                     <td> <h5>Type of Arena</h5></td>
-                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-light" aria-hidden="true"></i></h5></td>
+                                                                    <td> <h5><i class="fa fa-arrow-circle-right  text-danger        " aria-hidden="true"></i></h5></td>
                                                                     <td> {this.state.arena}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td> <h5>Date of Booking</h5></td>
-                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-light" aria-hidden="true"></i></h5></td>
+                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-danger     " aria-hidden="true"></i></h5></td>
                                                                     <td> {this.state.date}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td> <h5>Timing of Booking</h5></td>
-                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-light" aria-hidden="true"></i></h5></td>
+                                                                    <td> <h5><i class="fa fa-arrow-circle-right text-danger     " aria-hidden="true"></i></h5></td>
                                                                     <td> {this.state.time}</td>
                                                                 </tr>
                                                             </tbody>
@@ -127,7 +127,7 @@ class Addcard extends React.Component {
                                     {/* <input type="checkbox" id="exampleInputEmail1" aria-describedby="emailHelp" className="ml-2 mt-3" onChange={this.checked} />
                                     <label for="exampleInputEmail1" class="form-label px-2">I have checked the Cages</label> */}
                                     <div className="text-center my-4">
-                                        <Link to='/payment' id="sendbutton"><button className="btn btn-success text-center" id="sendbutton">Check out</button></Link>
+                                        <Link to='/payment' className="text-dark"><button className="btn  font-weight-bold  text-center" id="sendbutton">Check out</button></Link>
                                     </div>
                                 </form>
                             </div>

@@ -42,21 +42,21 @@
 {
   
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.50), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
-  background-color:#54ac79;
+  background-color:#ffffff;
 }
 #hrline
 {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   opacity: 30%;
-  
+
 }
 #hrline1
 {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   opacity: 30%;
-  
+
 }
 #summary
 {
@@ -70,13 +70,10 @@
 }
 .table4
 {
-  background-color: #40ad6d;
+  background-color: #dfdfdf;
   
 }
-.table1
-{
-  background-color: lightgrey
-}
+
 #samecolor
 {
   background-color:lightgrey
@@ -132,9 +129,6 @@
   
 }
 .question{
-  font-size: 28px;
-  font-weight: bold;
-  font-family: 'Nunito', sans-serif;
   letter-spacing: 3px;
   
 }
@@ -153,9 +147,9 @@
   padding: 20px; 
   width: 400px; 
   margin-bottom: 20px; 
-  border-bottom-width: 2px; 
+  border-bottom-width: 1px; 
   border-bottom-style: solid; 
-  border-bottom-color: #40ad6d; 
+  border-bottom-color: #000000; 
   border-top-style: none; 
   border-right-style: none; 
   border-left-style: none; 
@@ -337,14 +331,29 @@ input:focus {
   width: 200px;
   height: 100px;
 }
+
 #sendbutton
 {
- shdown:none; 
-
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: inset
+  
 }
 #sendbutton:hover
 {
-  background-color: rgb(247, 5, 9);
+  background-color: rgb(194, 43, 43);
   color:white;
+  border-radius: 10px;
+}
+#submit
+{
+  background-color:whitesmoke;
+  color:black;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.5) 0px 16px 56px, rgba(17, 17, 26, 0.5) 0px 24px 80px;
   
+}
+#submit:hover
+{
+  background-color: red;
+  color:white
 }
