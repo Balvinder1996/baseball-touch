@@ -178,7 +178,7 @@ class PaypalButton extends React.Component {
                                     </div>
                                     <hr id="hrline" />
                                     <div className="mt-3">
-                                        <table className="table my-2 table-hover table4 text-center text-white">
+                                        <table className="table my-2 table-hover table4 text-center ">
                                             <tbody>
                                                 <tr>
                                                     <td><h5>Ground preference</h5></td>
@@ -214,7 +214,7 @@ class PaypalButton extends React.Component {
                                                 <div>
                                                     <input type="number" name="mobile_number" class="formStyle" placeholder="Number (required)" value={this.state.pushData.mobile_number} onChange={this.userdetails} required />
                                                 </div>
-                                                <input type="submit" value="submit" className="btn btn-sm btn-success" />
+                                                <input type="submit" value="submit" className="btn btn-sm " id="submit" />
                                             </form>
                                         </div>
                                     </div>
