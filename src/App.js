@@ -8,6 +8,7 @@ import Addcard from './components/AddCart';
 import { useState } from 'react';
 import Payment from './components/Payment';
 import React from 'react';
+import Rent from './Rent';
 
 class App extends React.Component {
   render() {
@@ -16,7 +17,7 @@ class App extends React.Component {
         <Router>
           <NavBar />
           <Switch>
-            <Route exact path="/Home" component={Home} />
+            <Route exact path="/rent" component={Rent} />
             <Route exact path="/" component={RentCage} />
             <Route exact path="/add-cart" component={Addcard} />
             <Route exact path="/payment" component={Payment} />
