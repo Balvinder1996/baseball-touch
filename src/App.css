@@ -278,3 +278,7 @@ input:focus {
     border: 2px solid black;
   }
 }
+.animated{
+  box-shadow: rgba(170, 169, 169, 0.8) 0px 30px 60px -12px inset, rgba(41, 200, 82, 1) 0px 18px 36px -18px inset;
+   border-radius: 5px;
+}
