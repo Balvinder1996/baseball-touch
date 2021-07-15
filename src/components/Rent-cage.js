@@ -99,7 +99,7 @@ class Rentcage extends React.Component {
             let Day=day;
            let Year=Day.getFullYear();
            let Month=Day.getMonth()+1;
-           let Date1=Day.getDate();
+           let Date1=Day.getDate()+1;
            let slotTime_demo=new Date(`${Year}-${Month}-${Date1}`);
            let slotTime=slotTime_demo.toISOString()
         
@@ -246,7 +246,7 @@ class Rentcage extends React.Component {
                             
                         >
                             <div className="col-md-12 text-center">
-                                <h3 id="dinger-heding">DINGERS CAGE RENTAL BOOKING CATALOGUE</h3>
+                                <h3 id="dinger-heding">DINGERS CAGE RENTAL PRICE LIST</h3>
                             </div>
                         </div>
 
