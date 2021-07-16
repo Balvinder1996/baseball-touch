@@ -131,6 +131,7 @@ class Rentcage extends React.Component {
     timings = (event) => {
         console.log(event);
        document.getElementById("addcard_button").disabled=false;
+       document.getElementById('addcard_button_link').className="font-weight-bold"
        let raj = document.getElementById('raj_gussa');
        raj.className = "animated animate__animated animate__flash animate__infinite animate__slow "
        let non_selected_time = document.getElementsByClassName("btn  btn-success text-weight-bold")
@@ -165,6 +166,7 @@ class Rentcage extends React.Component {
         if(error.response.status == 400 ){
             this.notify('No Cage is available on this date.');
             document.getElementById("addcard_button").disabled=true;
+            document.getElementById('addcard_button_link').className="font-weight-bold disabled"
          
         }
            console.error(error)
@@ -207,6 +209,7 @@ class Rentcage extends React.Component {
                     }
                 )
                 document.getElementById("addcard_button").disabled = true;
+                document.getElementById('addcard_button_link').className="font-weight-bold disabled"
             }
         }).catch((error) => {
             this.setState(
@@ -424,7 +427,7 @@ class Rentcage extends React.Component {
 
 
                 <Modal size="lg" show={this.state.show}  >
-                    <Modal.Header className=" text-white" id="samecolor" ><span className=".modal"><h2 >Book Your Cage</h2></span></Modal.Header>
+                    <Modal.Header  id="samecolor" ><span className=".modal"><h2 > Your Cage</h2></span></Modal.Header>
                     <Modal.Body className=".modal text-center" >
                         <div className="card">
 
@@ -454,7 +457,7 @@ class Rentcage extends React.Component {
                                                 this.state.slots.map((list) => {
                                                     return (
                                                         <ul className="list-group">
-                                                            <input type="text" className="btn  btn-success text-weight-bold" readOnly value={list} onClick={this.timings} id="listing" />
+                                                            <input type="text" className="btn  btn-light text-weight-bold" readOnly value={list} onClick={this.timings} id="listing" />
                                                         </ul>
                                                     )
                                                 }):null
@@ -466,7 +469,7 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to='add-cart' onClick={this.sessions} id="addcard_button_link" className="font-weight-bold" ><button className="btn  mt-5" id="addcard_button" disabled>Add to card</button></Link>            
+                        <Link to='add-cart' onClick={this.sessions}  id="addcard_button_link" className="font-weight-bold disabled" ><button className="btn  mt-5" id="addcard_button" disabled>Reserve</button></Link>            
                         <button className="btn  mt-5" onClick={this.modal_deactive} id="close">close</button>
 
                     </Modal.Body>
@@ -481,7 +484,7 @@ class Rentcage extends React.Component {
 }
 
 
-export default Rentcage
+    export default Rentcage
 
 
 

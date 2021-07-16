@@ -16,9 +16,7 @@ class NavBar extends React.Component {
 
                         <div className="collapse navbar-collapse animate__animated animate__fadeInLeftBig" id="navbarSupportedContent">
                             <ul className="navbar-nav offset-lg-7 ">
-                                <li className="nav-item pl-3">
-                                    <Link className="nav-link active " to='/rent' >Rent</Link>
-                                </li>
+                                
                                 <li className="nav-item   pl-3">
                                     <Link className="nav-link " aria-current="page" to='/'>Rent A Cage</Link>
                                 </li>
