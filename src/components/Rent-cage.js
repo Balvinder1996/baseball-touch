@@ -101,7 +101,7 @@ class Rentcage extends React.Component {
             console.log(Day)
             let Year = Day.getFullYear();
             let Month = Day.getMonth() + 1;
-            let Date1 = Day.getDate() -1 ;
+            let Date1 = Day.getDate() ;
             let slotTime_demo = new Date(`${Year}-${Month}-${Date1}`);
             console.log(slotTime_demo.setDate(slotTime_demo.getDate() + 1))
             let slotTime = slotTime_demo.toISOString()
@@ -131,6 +131,8 @@ class Rentcage extends React.Component {
     timings = (event) => {
         console.log(event);
        document.getElementById("addcard_button").disabled=false;
+       let raj = document.getElementById('raj_gussa');
+       raj.className = "animated animate__animated animate__flash animate__infinite animate__slow "
        let non_selected_time = document.getElementsByClassName("btn  btn-success text-weight-bold")
 
 
@@ -196,9 +198,15 @@ class Rentcage extends React.Component {
                 this.setState(
                     {
                         ...this.state,
-                        slots:[]
+                        slots:[],
+                        Data:
+                        {
+                            ...this.state.Data,
+                            selectedSlot:"Not selected"
+                        }
                     }
                 )
+                document.getElementById("addcard_button").disabled = true;
             }
         }).catch((error) => {
             this.setState(
@@ -438,7 +446,7 @@ class Rentcage extends React.Component {
                                     <div className="col-md-6 text-center">
 
                                         <h3>Time slots</h3>
-                                        <p>{this.state.Data.selectedSlot}</p>
+                                        <p id="raj_gussa">Selected Time:{this.state.Data.selectedSlot}</p>
 
                                         <div id="slot-timings">
                                             {
@@ -458,7 +466,7 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <button className="btn  mt-5" id="addcard_button" disabled><Link to='add-cart' onClick={this.sessions} id="addcard_button_link" className="font-weight-bold" >Add to card</Link></button>   
+                        <Link to='add-cart' onClick={this.sessions} id="addcard_button_link" className="font-weight-bold" ><button className="btn  mt-5" id="addcard_button" disabled>Add to card</button></Link>            
                         <button className="btn  mt-5" onClick={this.modal_deactive} id="close">close</button>
 
                     </Modal.Body>
