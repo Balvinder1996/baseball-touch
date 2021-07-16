@@ -26,6 +26,7 @@ class Rentcage extends React.Component {
             show: false,
             slots: [],
             errormsg: "",
+            showTime:"",
             Data:
             {
                 Arena: "",
@@ -128,9 +129,10 @@ class Rentcage extends React.Component {
             )
         }
     }
-    timings = (event) => {
-        console.log(event);
-       document.getElementById("addcard_button").disabled=false;
+    timings = (time) => {
+        console.log(time);
+
+        document.getElementById("addcard_button").disabled=false;
        document.getElementById('addcard_button_link').className="font-weight-bold"
        let raj = document.getElementById('raj_gussa');
        raj.className = "animated animate__animated animate__flash animate__infinite animate__slow "
@@ -139,12 +141,12 @@ class Rentcage extends React.Component {
 
        console.log(this.state.Data)
 
-       let dheeraj = `${this.state.Data.modifiedDate.slice(0,10)} ${event.target.value}`;
+       let dheeraj = `${this.state.Data.modifiedDate.slice(0,10)} ${time}`;
         let ayush = new Date(`${dheeraj}`).toISOString("en-US", {timeZone: "UTC"})
     //    let prateek = new Date(`${aayush}`).toISOString;
     //    console.log(`${prateek} is is `)
     
-       console.log(`${this.state.Data.modifiedDate.slice(0,10)} ${event.target.value}`)
+       console.log(`${this.state.Data.modifiedDate.slice(0,10)} ${time}`)
        let booking_status_payload = {
            "booking_time": ayush     ,
            "arena":this.state.Data.ArenaNo,
@@ -171,13 +173,14 @@ class Rentcage extends React.Component {
         }
            console.error(error)
        })
+    
         this.setState(
             {
                 ...this.state,
                 Data:
                 {
                     ...this.state.Data,
-                    selectedSlot: event.target.value
+                    selectedSlot: time
                 }
             }
         )
@@ -235,6 +238,7 @@ class Rentcage extends React.Component {
         storage.setItem('booking_time', new Date(adding).toISOString());
 
     }
+  
      notify = (message)=>{ 
         
         toast.error(message)
@@ -454,10 +458,25 @@ class Rentcage extends React.Component {
                                         <div id="slot-timings">
                                             {
                                                  (this.state.slots !=undefined) ? 
-                                                this.state.slots.map((list) => {
+                                                this.state.slots.map((time) => {
+                                                    let hour = parseInt(time.split(":")[0])
+                                                    let display_time = null;
+                                                    if (hour  > 12){
+                                                        display_time = (hour - 12) + ":00 PM"
+                                                    } else if (hour === 0){
+                                                        display_time =  "12:00 AM"
+
+                                                    }else if (hour === 12){
+                                                        display_time =  "12:00 PM"
+
+                                                    }
+                                                    else{
+                                                        display_time = hour + ":00 AM"
+ 
+                                                    }
                                                     return (
                                                         <ul className="list-group">
-                                                            <input type="text" className="btn  btn-light text-weight-bold" readOnly value={list} onClick={this.timings} id="listing" />
+                                                            <input type="text" className="btn  btn-light text-weight-bold" readOnly value={display_time} time={time}  onClick={()=>this.timings(time)}id="listing" />
                                                         </ul>
                                                     )
                                                 }):null
