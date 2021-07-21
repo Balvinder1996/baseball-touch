@@ -126,7 +126,7 @@ class PaypalButton extends React.Component {
 
             };
             if (details.status == "COMPLETED") {
-                let DataUrl = `https://dingers-training.herokuapp.com/cage/booking`;
+                let DataUrl = `http://161.35,97.122/cage/booking`;
                 axios.post(DataUrl, this.state.pushData).then((response) => {
                     console.log("success")
                 }).catch((error) => {

@@ -6,8 +6,9 @@ class Payment extends Component {
 
     render() {
             return (
+            
                 <>
-                    <PaypalButtons amount = '1' />
+                    <PaypalButtons amount = {sessionStorage.getItem('Amount')} />
                 </>
             );
     }
