@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.36371df3.chunk.css",
+    "main.js": "/static/js/main.acb7b26f.chunk.js",
+    "main.js.map": "/static/js/main.acb7b26f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.95f56131.js",
+    "runtime-main.js.map": "/static/js/runtime-main.95f56131.js.map",
+    "static/css/2.edf832bb.chunk.css": "/static/css/2.edf832bb.chunk.css",
+    "static/js/2.e2df33fd.chunk.js": "/static/js/2.e2df33fd.chunk.js",
+    "static/js/2.e2df33fd.chunk.js.map": "/static/js/2.e2df33fd.chunk.js.map",
+    "static/js/3.6aa11e29.chunk.js": "/static/js/3.6aa11e29.chunk.js",
+    "static/js/3.6aa11e29.chunk.js.map": "/static/js/3.6aa11e29.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.edf832bb.chunk.css.map": "/static/css/2.edf832bb.chunk.css.map",
+    "static/css/main.36371df3.chunk.css.map": "/static/css/main.36371df3.chunk.css.map",
+    "static/js/2.e2df33fd.chunk.js.LICENSE.txt": "/static/js/2.e2df33fd.chunk.js.LICENSE.txt",
+    "static/media/Ground-img1.319e3ffb.jpg": "/static/media/Ground-img1.319e3ffb.jpg",
+    "static/media/Logoimg.488176e5.webp": "/static/media/Logoimg.488176e5.webp",
+    "static/media/a.3fa80bd5.png": "/static/media/a.3fa80bd5.png",
+    "static/media/mdb.css": "/static/media/arrow_right.f7c6ac6d.svg",
+    "static/media/b.6e0ef67b.png": "/static/media/b.6e0ef67b.png",
+    "static/media/ballimg2.21e2f07b.jpg": "/static/media/ballimg2.21e2f07b.jpg",
+    "static/media/baseballimg.47adae94.jpg": "/static/media/baseballimg.47adae94.jpg",
+    "static/media/c.ba76c33b.png": "/static/media/c.ba76c33b.png",
+    "static/media/cage1.0c8b1825.png": "/static/media/cage1.0c8b1825.png",
+    "static/media/cage2.abb2d8db.png": "/static/media/cage2.abb2d8db.png",
+    "static/media/cage3.864f8aed.png": "/static/media/cage3.864f8aed.png",
+    "static/media/d.f4639223.png": "/static/media/d.f4639223.png",
+    "static/media/App.css": "/static/media/paralaxtwo.f9a84c97.jfif",
+    "static/media/all.css": "/static/media/fa-solid-900.efbd5d20.eot",
+    "static/media/logo.aa07525f.png": "/static/media/logo.aa07525f.png",
+    "static/media/paypal.adceb564.gif": "/static/media/paypal.adceb564.gif",
+    "static/media/succes.a388511e.gif": "/static/media/succes.a388511e.gif",
+    "static/media/tick.6e4045be.gif": "/static/media/tick.6e4045be.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95f56131.js",
+    "static/css/2.edf832bb.chunk.css",
+    "static/js/2.e2df33fd.chunk.js",
+    "static/css/main.36371df3.chunk.css",
+    "static/js/main.acb7b26f.chunk.js"
+  ]
+}

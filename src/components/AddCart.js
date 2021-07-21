@@ -14,6 +14,7 @@ class Addcard extends React.Component {
         const Amount = sessionStorage.getItem('Amount');
         const Day = sessionStorage.getItem('selectedDay');
         const time = sessionStorage.getItem('selectedSlot');
+        const display_time= sessionStorage.getItem('display_time');
         const arena_no = sessionStorage.getItem('arena_no')
         this.setState(
             {
@@ -21,7 +22,8 @@ class Addcard extends React.Component {
                 amount: Amount,
                 date: Day,
                 time: time,
-                arena_no: arena_no
+                arena_no: arena_no,
+                display_time:display_time
             }
         )
 
@@ -32,12 +34,13 @@ class Addcard extends React.Component {
 
         this.state =
         {
-
+            
             arena: "",
             amount: "",
             date: "",
             time: "",
-            arena_no: ""
+            arena_no: "",
+            display_time:""
         }
     }
     checked = () => {
@@ -81,7 +84,7 @@ class Addcard extends React.Component {
                                                                 <tr>
                                                                     <td> <h5>Timing of Booking</h5></td>
                                                                     <td> <h5><i class="fa fa-arrow-circle-right text-danger " aria-hidden="true"></i></h5></td>
-                                                                    <td> {this.state.time}</td>
+                                                                    <td> {this.state.display_time}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -110,8 +113,8 @@ class Addcard extends React.Component {
 
                             <div className="col-md-4 bg-light" >
                                 <h3 className="text-center pt-4">Summary</h3>
-                                <p className="px-3 mt-3">Welcome to Book Cage section . Please check the selection of ground and other preference before further process.
-                                    The Time slots are available for the One hour only.Please Check the Total and click checkbox.Happy Booking !!!
+                                <p className="px-3 mt-3">Thank you for chossing Dingers! Please double check you have selected the correct rental. Reminder
+                                that all time slots are for 55 minutes. If you would like another to reserve another 55 minutes please repeat the process.
                                 </p>
                                 <hr id="hrline" ></hr>
                                 <div className="row">

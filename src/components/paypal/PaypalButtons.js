@@ -21,6 +21,7 @@ class PaypalButton extends React.Component {
             paid: false,
             checkout_amount: props.amount,
             button_status: false,
+            display_time:"",
             Data:
             {
                 Arena: "",
@@ -52,11 +53,14 @@ class PaypalButton extends React.Component {
         const Day = sessionStorage.getItem('selectedDay');
         const time = sessionStorage.getItem('selectedSlot');
         const arena_no = sessionStorage.getItem('arena_no');
-        const booking_time = sessionStorage.getItem('booking_time')
+        const booking_time = sessionStorage.getItem('booking_time');
+        const display_time = sessionStorage.getItem('display_time')
+
 
         this.setState(
             {
                 ...this.state,
+                display_time:display_time,
 
                 Data:
                 {
@@ -198,7 +202,7 @@ class PaypalButton extends React.Component {
                                                         </tr>
                                                         <tr>
                                                             <td>Time Slot</td>
-                                                            <td>{this.state.Data.Time}</td>
+                                                            <td>{this.state.display_time}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

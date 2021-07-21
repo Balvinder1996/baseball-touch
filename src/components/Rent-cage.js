@@ -34,7 +34,8 @@ class Rentcage extends React.Component {
                 selectedDay: null,
                 selectedSlot: "Time",
                 ArenaNo:"",
-                modifiedDate:""
+                modifiedDate:"",
+                display_time : ""
             }
         }
 
@@ -129,7 +130,7 @@ class Rentcage extends React.Component {
             )
         }
     }
-    timings = (time) => {
+    timings = (time, display_time) => {
         console.log(time);
 
         document.getElementById("addcard_button").disabled=false;
@@ -180,7 +181,8 @@ class Rentcage extends React.Component {
                 Data:
                 {
                     ...this.state.Data,
-                    selectedSlot: time
+                    selectedSlot: time,
+                    display_time: display_time
                 }
             }
         )
@@ -207,7 +209,8 @@ class Rentcage extends React.Component {
                         Data:
                         {
                             ...this.state.Data,
-                            selectedSlot:"Not selected"
+                            selectedSlot:"Not selected",
+                            display_time: ""
                         }
                     }
                 )
@@ -234,6 +237,7 @@ class Rentcage extends React.Component {
         storage.setItem('Amount',this.state.Data.Amount);
         storage.setItem('selectedDay',this.state.Data.modifiedDate);
         storage.setItem('selectedSlot',this.state.Data.selectedSlot);
+        storage.setItem('display_time',this.state.Data.display_time);
         storage.setItem('arena_no',this.state.Data.ArenaNo);
         storage.setItem('booking_time', new Date(adding).toISOString());
 
@@ -431,7 +435,7 @@ class Rentcage extends React.Component {
 
 
                 <Modal size="lg" show={this.state.show}  >
-                    <Modal.Header  id="samecolor" ><span className=".modal"><h2 > Your Cage</h2></span></Modal.Header>
+                    <Modal.Header  id="samecolor" ><span className=".modal"><h2 >Reserve Your Cage</h2></span></Modal.Header>
                     <Modal.Body className=".modal text-center" >
                         <div className="card">
 
@@ -453,7 +457,7 @@ class Rentcage extends React.Component {
                                     <div className="col-md-6 text-center">
 
                                         <h3>Time slots</h3>
-                                        <p id="raj_gussa">Selected Time:{this.state.Data.selectedSlot}</p>
+                                        <p id="raj_gussa">Selected Time: {this.state.Data.display_time}</p>
 
                                         <div id="slot-timings">
                                             {
@@ -476,7 +480,7 @@ class Rentcage extends React.Component {
                                                     }
                                                     return (
                                                         <ul className="list-group">
-                                                            <input type="text" className="btn  btn-light text-weight-bold" readOnly value={display_time} time={time}  onClick={()=>this.timings(time)}id="listing" />
+                                                            <input type="text" className="btn  btn-light text-weight-bold" readOnly value={display_time} time={time}  onClick={()=>this.timings(time, display_time)}id="listing" />
                                                         </ul>
                                                     )
                                                 }):null
