@@ -158,7 +158,7 @@ class Rentcage extends React.Component {
 
        }
 
-       let Data_check=`http://161.35.97.122/cage/booking-status`;
+       let Data_check=`https://admin.dingerstrainingcenter.com/cage/booking-status`;
        Axios.post(Data_check,booking_status_payload).then((response)=>
        {
            console.log(response)
@@ -188,7 +188,7 @@ class Rentcage extends React.Component {
         )
     }
     getData = (selected_date) => {
-        let dataurl = `http://161.35.97.122/availabiliy/check?date=${selected_date}&arena=${this.state.Data.ArenaNo}`;
+        let dataurl = `https://admin.dingerstrainingcenter.com/availabiliy/check?date=${selected_date}&arena=${this.state.Data.ArenaNo}`;
         Axios.get(dataurl).then((response) => {
             let Data = response.data.time
             console.log(Data);
