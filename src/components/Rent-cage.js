@@ -105,7 +105,7 @@ class Rentcage extends React.Component {
             let Month = Day.getMonth() + 1;
             let Date1 = Day.getDate() ;
             let slotTime_demo = new Date(`${Year}-${Month}-${Date1}`);
-            console.log(slotTime_demo.setDate(slotTime_demo.getDate() + 1))
+            console.log(slotTime_demo.setDate(slotTime_demo.getDate()))
             let slotTime = slotTime_demo.toISOString()
 
             this.setState({
