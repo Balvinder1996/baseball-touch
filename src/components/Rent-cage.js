@@ -99,13 +99,13 @@ class Rentcage extends React.Component {
             
             console.log(day)
             // let Day = day;
-            let Day = new Date(day.setDate(day.getDate()));
-            console.log(Day)
-            let Year = Day.getFullYear();
-            let Month = Day.getMonth() + 1;
-            let Date1 = Day.getDate() ;
-            let slotTime_demo = new Date(`${Year}-${Month}-${Date1}`);
-            console.log(slotTime_demo.setDate(slotTime_demo.getDate()))
+            let slotTime_demo = new Date(day.setDate(day.getDate()));
+            console.log(slotTime_demo)
+            // let Year = Day.getFullYear();
+            // let Month = Day.getMonth() + 1;
+            // let Date1 = Day.getDate() ;
+            // let slotTime_demo = new DateBack to Add to card...Time_demo.replace(' ', 'T')).toISOString();
+
             let slotTime = slotTime_demo.toISOString()
 
             this.setState({
@@ -142,10 +142,12 @@ class Rentcage extends React.Component {
 
        console.log(this.state.Data)
 
-       let dheeraj = `${this.state.Data.modifiedDate.slice(0,10)} ${time}`;
+       let dheeraj = `${this.state.Data.modifiedDate.slice(0,10)}T${time}`;
+       console.log(dheeraj, '---------')
         let ayush = new Date(`${dheeraj}`).toISOString("en-US", {timeZone: "UTC"})
     //    let prateek = new Date(`${aayush}`).toISOString;
     //    console.log(`${prateek} is is `)
+        // console.log(ayush, '+++++++')
     
        console.log(`${this.state.Data.modifiedDate.slice(0,10)} ${time}`)
        let booking_status_payload = {
@@ -231,7 +233,7 @@ class Rentcage extends React.Component {
         let storage=window.sessionStorage;
         let Dateselect=this.state.Data.modifiedDate
         let timeselect=this.state.Data.selectedSlot
-        let adding=`${Dateselect} ${timeselect}`
+        let adding=`${Dateselect}T${timeselect}`
 
         storage.setItem('Arena',this.state.Data.Arena);
         storage.setItem('Amount',this.state.Data.Amount);

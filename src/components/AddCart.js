@@ -69,7 +69,7 @@ class Addcard extends React.Component {
                                                 <h2>Description</h2>
                                                 <div className="row pt-4">
                                                     <div className="col">
-                                                        <table className="table ">
+                                                        <table className="table booking-summary" style="padding-left: 1rem">
                                                             <tbody>
                                                                 <tr>
                                                                     <td> <h5>Type of Arena</h5></td>
