@@ -188,7 +188,7 @@ class PaypalButton extends React.Component {
                                                 <table className=" table table-hover table4 text-center ">
                                                     <tbody>
                                                         <tr>
-                                                            <td>Ground preference</td>
+                                                            <td>Rental Type</td>
                                                             <td>{this.state.Data.Arena}</td>
                                                         </tr>
 
