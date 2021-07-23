@@ -300,4 +300,4 @@ class PaypalButton extends React.Component {
         );
     }
 }
-export default scriptLoader(`https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}`)(PaypalButton);
+export default scriptLoader(`https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}&disable-funding=credit`)(PaypalButton);
