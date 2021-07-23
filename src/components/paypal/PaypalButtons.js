@@ -176,7 +176,7 @@ class PaypalButton extends React.Component {
 
                         <div className="container" >
                             <div className="row mx-5 bg-white" id="payment_container">
-                                <div className="col-md-6 pl-5 pt-2">
+                                <div className="col-md-6">
                                     <div className="my-2" >
                                         <h4 className="font-weight-bold " >Booking Summary</h4>
                                     </div>
@@ -221,7 +221,7 @@ class PaypalButton extends React.Component {
                                                     <input type="email" name="email" class="formStyle" placeholder="Email (required)" value={this.state.pushData.email} onChange={this.userdetails} required />
                                                 </div>
                                                 <div>
-                                                    <input type="number" name="mobile_number" class="formStyle" placeholder="Number (required)" value={this.state.pushData.mobile_number} onChange={this.userdetails} required />
+                                                    <input type="number" name="mobile_number" class="formStyle" placeholder="Mobile No. (required)" value={this.state.pushData.mobile_number} onChange={this.userdetails} required />
                                                 </div>
                                                 <input type="submit" value="submit" className="btn btn-sm font-weight-bold" id="submit" />
                                             </form>
@@ -231,7 +231,7 @@ class PaypalButton extends React.Component {
 
                                     <div className=" pt-3 pb-3">
 
-                                        <Link to="add-cart"><i class="fa fa-arrow-left px-3 text-danger pb-1" aria-hidden="true"></i></Link>  Back to Add to card...
+                                        <Link to="add-cart"><i class="fa fa-arrow-left px-3 text-danger pb-1" aria-hidden="true"></i></Link>  Back to Reservation...
                                     </div>
                                 </div>
 
@@ -260,7 +260,7 @@ class PaypalButton extends React.Component {
                                                     </React.Fragment>
                                                     :
                                                     <div className="mt-3 pt-5 ">
-                                                        <h3>Please fill and submit your details first to proceed the payment.</h3>
+                                                        <h5>Please fill and submit your details first to proceed the payment.</h5>
                                                     </div>
                                             }
 
