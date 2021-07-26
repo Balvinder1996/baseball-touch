@@ -291,7 +291,7 @@ class Rentcage extends React.Component {
                                         <div className="col-md-6 ">
                                             <h4 className="Foot-cage">35 Foot Cage (without machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
-                                                Includes Ball, Pitching Screen and Tee.
+                                                Includes Balls, Pitching Screen and Tee.
                                             </h5>
                                         </div>
                                         <div className="col-md-3">
@@ -306,9 +306,9 @@ class Rentcage extends React.Component {
                                     <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">35 Foot Cage (With baseball only machine. If you want softball machine, call 321-266-5325)</h4>
+                                            <h4 className="Foot-cage">35 Foot Cage (With baseball machine. If you want softball machine, call 321-266-5325)</h4>
                                             <h5 className="Foot-cage-paragraph">
-                                                Includes Ball, Pitching Screen and Tee.
+                                                Includes Balls, Pitching Screen and Tee.
                                             </h5>
                                         </div>
                                         <div className="col-md-3 text-center pt-2">
@@ -340,7 +340,7 @@ class Rentcage extends React.Component {
                                         <div className="col-md-6 ">
                                             <h4 className="Foot-cage">70 Foot Cage (without machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
-                                                Includes Ball, Pitching Screen and Tee.
+                                                Includes Balls, Pitching Screen and Tee.
                                             </h5>
                                         </div>
                                         <div className="col-md-3">
@@ -355,9 +355,9 @@ class Rentcage extends React.Component {
                                     <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">70 Foot Cage (With baseball only machine. If you want softball machine, call 321-266-5325)</h4>
+                                            <h4 className="Foot-cage">70 Foot Cage (With baseball machine. If you want softball machine, call 321-266-5325)</h4>
                                             <h5 className="Foot-cage-paragraph">
-                                                Includes Ball, Pitching Screen and Tee.
+                                                Includes Balls, Pitching Screen and Tee.
                                             </h5>
                                         </div>
                                         <div className="col-md-3 text-center pt-2">
@@ -389,7 +389,7 @@ class Rentcage extends React.Component {
                                         <div className="col-md-6 ">
                                             <h4 className="Foot-cage">Full Facility (without machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
-                                                Includes Ball, Pitching Screen and Tee.
+                                                Includes Balls, Pitching Screen and Tee.
                                             </h5>
                                         </div>
                                         <div className="col-md-3">
@@ -406,7 +406,7 @@ class Rentcage extends React.Component {
                                         <div className="col-md-6">
                                             <h4 className="Foot-cage">Full Facility (with machine)</h4>
                                             <h5 className="Foot-cage-paragraph">
-                                                Includes Ball, Pitching Screen and Tee.
+                                                Includes Balls, Pitching Screen and Tee.
                                             </h5>
                                         </div>
                                         <div className="col-md-3 text-center pt-2">
