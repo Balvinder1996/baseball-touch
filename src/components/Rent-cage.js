@@ -306,7 +306,7 @@ class Rentcage extends React.Component {
                                     <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">35 Foot Cage (with machine)</h4>
+                                            <h4 className="Foot-cage">35 Foot Cage (With baseball only machine. If you want softball machine, call 321-266-5325)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Ball, Pitching Screen and Tee.
                                             </h5>
@@ -317,7 +317,7 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm   pt-2" onClick={this.preference} name="35 ft Ground with Machine" data-amount="46" data-arena_const="1">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm   pt-2" onClick={this.preference} name="35 ft with Machine" data-amount="46" data-arena_const="1">Book</button>
                                         </div>
                                     </div>
                                 </div>
@@ -355,7 +355,7 @@ class Rentcage extends React.Component {
                                     <hr id="hrline" className="mx-3 bg-success" />
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">70 Foot Cage (with machine)</h4>
+                                            <h4 className="Foot-cage">70 Foot Cage (With baseball only machine. If you want softball machine, call 321-266-5325)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Ball, Pitching Screen and Tee.
                                             </h5>
@@ -366,7 +366,7 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="70 ft Ground with Machine" data-amount="66" data-arena_const="3">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="70 ft with Machine" data-amount="66" data-arena_const="3">Book</button>
                                         </div>
                                     </div>
                                 </div>
