@@ -220,6 +220,13 @@ input:focus {
   font-family: 'Archivo Black', sans-serif;
   
 }
+#dinger-heding-h6{
+  color: rgb(161, 149, 149);
+  font-size: 18px;
+  line-height: 1;  
+  font-family: 'Archivo Black', sans-serif;
+  
+}
 .Contact_info{
   font-size: 30px;
   font-weight: 400;

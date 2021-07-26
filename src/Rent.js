@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import cage1 from './assets/cage1.png';
-import cage2 from './assets/cage2.png';
-import cage3 from './assets/cage3.png';
+import cage1 from './assets/cage1.jpeg';
+import cage2 from './assets/cage2.jpeg';
+import cage3 from './assets/cage3.jpeg';
 
 class Rent extends Component {
     render() {
@@ -14,6 +14,8 @@ class Rent extends Component {
                         <div className="row p-4">
                             <div className="col-md-12 text-center">
                                 <h3 id="dinger-heding">DINGERS CAGE RENTAL BOOKING CATALOGUE</h3>
+                                <h6 id="dinger-heding-h6">All cage rentals end 5 minutes before the top of the hour to allow for smooth transition to the next hour rental</h6>
+
                             </div>
                         </div>
 

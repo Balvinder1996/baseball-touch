@@ -4,9 +4,9 @@ import img from '../assets/Ground-img1.jpg'
 import img3 from '../assets/ballimg2.jpg'
 import { Modal, ResponsiveEmbed } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import cage1 from "../assets/cage1.png";
-import cage2 from "../assets/cage2.png";
-import cage3 from "../assets/cage3.png";
+import cage1 from "../assets/cage1.jpeg";
+import cage2 from "../assets/cage2.jpeg";
+import cage3 from "../assets/cage3.jpeg";
 import AOS from 'aos';
 import Axios from 'axios'
 import DayPicker from 'react-day-picker';
@@ -271,6 +271,8 @@ class Rentcage extends React.Component {
                         >
                             <div className="col-md-12 text-center">
                                 <h3 id="dinger-heding">DINGERS CAGE RENTAL PRICE LIST</h3>
+                                <h6 id="dinger-heding-h6">All cage rentals end 5 minutes before the top of the hour to allow for smooth transition to the next hour rental</h6>
+
                             </div>
                         </div>
 
@@ -298,7 +300,7 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton"  className="btn btn-sm  pt-2" onClick={this.preference} name="35 Foot Ground without Machine" data-amount="32" data-arena_const="2">Book</button>
+                                            <button id="sendbutton"  className="btn btn-sm  pt-2" onClick={this.preference} name="35 ft without Machine" data-amount="32" data-arena_const="2">Book</button>
                                         </div>
                                     </div>
                                     <hr id="hrline" className="mx-3 bg-success" />
@@ -315,7 +317,7 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm   pt-2" onClick={this.preference} name="35 Foot Ground with Machine" data-amount="46" data-arena_const="1">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm   pt-2" onClick={this.preference} name="35 ft Ground with Machine" data-amount="46" data-arena_const="1">Book</button>
                                         </div>
                                     </div>
                                 </div>
@@ -347,7 +349,7 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="70 Foot Ground without Machine" data-amount="54" data-arena_const="4">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="70 ft Ground without Machine" data-amount="54" data-arena_const="4">Book</button>
                                         </div>
                                     </div>
                                     <hr id="hrline" className="mx-3 bg-success" />
@@ -364,7 +366,7 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="70 Foot Ground with Machine" data-amount="66" data-arena_const="3">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="70 ft Ground with Machine" data-amount="66" data-arena_const="3">Book</button>
                                         </div>
                                     </div>
                                 </div>
