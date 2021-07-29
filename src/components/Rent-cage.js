@@ -2,8 +2,8 @@ import React from 'react';
 import img2 from '../assets/baseballimg.jpg'
 import img from '../assets/Ground-img1.jpg'
 import img3 from '../assets/ballimg2.jpg'
-import { Modal, ResponsiveEmbed } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import {Modal, ResponsiveEmbed} from 'react-bootstrap'
+import {Link} from 'react-router-dom';
 import cage1 from "../assets/cage1.jpeg";
 import cage2 from "../assets/cage2.jpeg";
 import cage3 from "../assets/cage3.jpeg";
@@ -12,9 +12,10 @@ import Axios from 'axios'
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import './calender.css'
-import {  toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+
 toast.configure()
 
 class Rentcage extends React.Component {
@@ -22,29 +23,29 @@ class Rentcage extends React.Component {
         super(props);
         this.handleDayClick = this.handleDayClick.bind(this);
         this.state =
-        {
-            show: false,
-            slots: [],
-            errormsg: "",
-            showTime:"",
-            Data:
             {
-                Arena: "",
-                Amount: "",
-                selectedDay: null,
-                selectedSlot: "Time",
-                ArenaNo:"",
-                modifiedDate:"",
-                display_time : ""
+                show: false,
+                slots: [],
+                errormsg: "",
+                showTime: "",
+                Data:
+                    {
+                        Arena: "",
+                        Amount: "",
+                        selectedDay: null,
+                        selectedSlot: "Time",
+                        ArenaNo: "",
+                        modifiedDate: "",
+                        display_time: ""
+                    }
             }
-        }
 
     }
+
     componentDidMount() {
-        AOS.init({ duration: 1700 });
+        AOS.init({duration: 1700});
         window.scrollTo(0, 0);
     }
-   
 
 
     modal_active = () => {
@@ -60,43 +61,44 @@ class Rentcage extends React.Component {
             {
                 ...this.state,
                 show: false,
-                slots:[],
+                slots: [],
                 Data:
-                {
-                    Arena: "",
-                    Amount: "",
-                    selectedDay: null,
-                    selectedSlot:"",
-                    modifiedDate:""
-                }
+                    {
+                        Arena: "",
+                        Amount: "",
+                        selectedDay: null,
+                        selectedSlot: "",
+                        modifiedDate: ""
+                    }
             }
         )
     }
 
-    preference= (event) => {
-        
+    preference = (event) => {
+
         this.setState(
             {
                 ...this.state,
                 show: true,
                 Data:
-                {
-                    ...this.state.Data,
-                    Arena: event.target.name,
-                    Amount:parseInt(event.target.dataset.amount),
-                    ArenaNo:parseInt(event.target.dataset.arena_const)
-                }
+                    {
+                        ...this.state.Data,
+                        Arena: event.target.name,
+                        Amount: parseInt(event.target.dataset.amount),
+                        ArenaNo: parseInt(event.target.dataset.arena_const)
+                    }
             }
-        );console.log(event.target.dataset.amount)
+        );
+        console.log(event.target.dataset.amount)
     }
-    handleDayClick(day, { selected }) {
-        
-        let tarik=new Date().toISOString().slice(0,10)
+
+    handleDayClick(day, {selected}) {
+
+        let tarik = new Date().toISOString().slice(0, 10)
         console.log(`this is ${tarik}`);
         console.log(day.toISOString())
-        if(day.toISOString().slice(0,10) >= tarik)
-        {
-            
+        if (day.toISOString().slice(0, 10) >= tarik) {
+
             console.log(day)
             // let Day = day;
             let slotTime_demo = new Date(day.setDate(day.getDate()));
@@ -111,113 +113,114 @@ class Rentcage extends React.Component {
             this.setState({
                 ...this.state,
                 Data:
-                {   ...this.state.Data,
-                    selectedDay: day,
-                    modifiedDate: slotTime.slice(0,10)
-                }
+                    {
+                        ...this.state.Data,
+                        selectedDay: day,
+                        modifiedDate: slotTime.slice(0, 10)
+                    }
             });
-            console.log(slotTime.slice(0,10))
-            this.getData(slotTime.slice(0,10))
-    
-        }
-        else
-        {
+            console.log(slotTime.slice(0, 10))
+            this.getData(slotTime.slice(0, 10))
+
+        } else {
             this.setState
             (
                 {
-                    slots:[]
+                    slots: []
                 }
             )
         }
     }
+
     timings = (time, display_time) => {
         console.log(time);
 
-        document.getElementById("addcard_button").disabled=false;
-       document.getElementById('addcard_button_link').className="font-weight-bold"
-       let raj = document.getElementById('raj_gussa');
-       raj.className = "animated animate__animated animate__flash animate__infinite animate__slow "
-       let non_selected_time = document.getElementsByClassName("btn  btn-success text-weight-bold")
+        document.getElementById("addcard_button").disabled = false;
+        document.getElementById('addcard_button_link').className = "font-weight-bold"
+        let raj = document.getElementById('raj_gussa');
+        raj.className = "animated animate__animated animate__flash animate__infinite animate__slow "
+        let non_selected_time = document.getElementsByClassName("btn  btn-success text-weight-bold")
 
 
-       console.log(this.state.Data)
+        console.log(this.state.Data)
 
-       let dheeraj = `${this.state.Data.modifiedDate.slice(0,10)}T${time}`;
-       console.log(dheeraj, '---------')
+        let dheeraj = `${this.state.Data.modifiedDate.slice(0, 10)}T${time}`;
+        console.log(dheeraj, '---------')
         let ayush = new Date(`${dheeraj}`).toISOString("en-US", {timeZone: "UTC"})
-    //    let prateek = new Date(`${aayush}`).toISOString;
-    //    console.log(`${prateek} is is `)
+        //    let prateek = new Date(`${aayush}`).toISOString;
+        //    console.log(`${prateek} is is `)
         // console.log(ayush, '+++++++')
-    
-       console.log(`${this.state.Data.modifiedDate.slice(0,10)} ${time}`)
-       let booking_status_payload = {
-           "booking_time": ayush     ,
-           "arena":this.state.Data.ArenaNo,
-           "name":"test",
-           "email":"test@gtes.vom",
-           "mobile_number":"0000000000",
-           "amount":this.state.Data.Amount
 
-       }
+        console.log(`${this.state.Data.modifiedDate.slice(0, 10)} ${time}`)
+        let booking_status_payload = {
+            "booking_time": ayush,
+            "arena": this.state.Data.ArenaNo,
+            "name": "test",
+            "email": "test@gtes.vom",
+            "mobile_number": "0000000000",
+            "amount": this.state.Data.Amount
 
-       let Data_check=`https://admin.dingerstrainingcenter.com/cage/booking-status`;
-       Axios.post(Data_check,booking_status_payload).then((response)=>
-       {
-           console.log(response)
-         
-           console.log("completed the task")
-       }).catch((error)=>
-       {
-        if(error.response.status == 400 ){
-            this.notify('No Cage is available on this date.');
-            document.getElementById("addcard_button").disabled=true;
-            document.getElementById('addcard_button_link').className="font-weight-bold disabled"
-         
         }
-           console.error(error)
-       })
-    
+
+        let Data_check = `https://admin.dingerstrainingcenter.com/cage/booking-status`;
+        Axios.post(Data_check, booking_status_payload).then((response) => {
+            console.log(response)
+
+            console.log("completed the task")
+        }).catch((error) => {
+            if (error.response.status == 400) {
+                this.notify('No Cage is available on this date.');
+                document.getElementById("addcard_button").disabled = true;
+                document.getElementById('addcard_button_link').className = "font-weight-bold disabled"
+
+            }
+            console.error(error)
+        })
+
         this.setState(
             {
                 ...this.state,
                 Data:
-                {
-                    ...this.state.Data,
-                    selectedSlot: time,
-                    display_time: display_time
-                }
+                    {
+                        ...this.state.Data,
+                        selectedSlot: time,
+                        display_time: display_time
+                    }
             }
         )
     }
     getData = (selected_date) => {
-        let dataurl = `https://admin.dingerstrainingcenter.com/availabiliy/check?date=${selected_date}&arena=${this.state.Data.ArenaNo}`;
+        // let browswer_date = new Date()
+        // let offset = browswer_date.getTimezoneOffset()
+        let dataurl = `https://admin.dingerstrainingcenter.com/check?date=${selected_date}&arena=${this.state.Data.ArenaNo}`; // converted utc offset to NY time by decrementing NY offset (240)
         Axios.get(dataurl).then((response) => {
             let Data = response.data.time
             console.log(Data);
-            if (Data.length > 0){
-            this.setState(
-                {
-                    ...this.state,
-                    slots: Data,
+            if (Data.length > 0) {
+                this.setState(
+                    {
+                        ...this.state,
+                        slots: Data,
 
-                }
-            )} else{
-                
+                    }
+                )
+            } else {
+
                 this.notify('No Cage is available on this date.')
                 this.setState(
                     {
                         ...this.state,
-                        slots:[],
+                        slots: [],
                         Data:
-                        {
-                            ...this.state.Data,
-                            selectedSlot:"Not selected",
-                            display_time: ""
-                        }
+                            {
+                                ...this.state.Data,
+                                selectedSlot: "Not selected",
+                                display_time: ""
+                            }
                     }
                 )
                 document.getElementById("addcard_button").disabled = true;
-                document.getElementById('addcard_button_link').className="font-weight-bold disabled"
+                document.getElementById('addcard_button_link').className = "font-weight-bold disabled"
             }
         }).catch((error) => {
             this.setState(
@@ -228,50 +231,49 @@ class Rentcage extends React.Component {
             )
         })
     }
-    sessions=()=>
-    {
-        let storage=window.sessionStorage;
-        let Dateselect=this.state.Data.modifiedDate
-        let timeselect=this.state.Data.selectedSlot
-        let adding=`${Dateselect}T${timeselect}`
+    sessions = () => {
+        let storage = window.sessionStorage;
+        let Dateselect = this.state.Data.modifiedDate
+        let timeselect = this.state.Data.selectedSlot
+        let adding = `${Dateselect}T${timeselect}:00-04:00`
 
-        storage.setItem('Arena',this.state.Data.Arena);
-        storage.setItem('Amount',this.state.Data.Amount);
-        storage.setItem('selectedDay',this.state.Data.modifiedDate);
-        storage.setItem('selectedSlot',this.state.Data.selectedSlot);
-        storage.setItem('display_time',this.state.Data.display_time);
-        storage.setItem('arena_no',this.state.Data.ArenaNo);
-        storage.setItem('booking_time', new Date(adding).toISOString());
+        console.log(adding, typeof (adding), 'Storing Date')
+        // console.log('ISO', new Date(adding).toISOString())
+        storage.setItem('Arena', this.state.Data.Arena);
+        storage.setItem('Amount', this.state.Data.Amount);
+        storage.setItem('selectedDay', this.state.Data.modifiedDate);
+        storage.setItem('selectedSlot', this.state.Data.selectedSlot);
+        storage.setItem('display_time', this.state.Data.display_time);
+        storage.setItem('arena_no', this.state.Data.ArenaNo);
+        storage.setItem('booking_time', adding);
 
     }
-  
-     notify = (message)=>{ 
-        
+
+    notify = (message) => {
+
         toast.error(message)
         // default notification
-        
-           
+
+
     }
-    
-    render() 
-    {
+
+    render() {
         return (
             <>
-            
-                    
-                
+
 
                 {/* Add to card starts here */}
 
-                <section >
+                <section>
                     <div className="container">
                         <div
                             className="row p-lg-1 p-md-3 mt-lg-5 mt-md-5 text-white"
-                            
+
                         >
                             <div className="col-md-12 text-center">
                                 <h3 id="dinger-heding">DINGERS CAGE RENTAL PRICE LIST</h3>
-                                <h6 id="dinger-heding-h6">All cage rentals end 5 minutes before the top of the hour to allow for smooth transition to the next hour rental</h6>
+                                <h6 id="dinger-heding-h6">All cage rentals end 5 minutes before the top of the hour to
+                                    allow for smooth transition to the next hour rental</h6>
 
                             </div>
                         </div>
@@ -300,13 +302,17 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton"  className="btn btn-sm  pt-2" onClick={this.preference} name="35 ft without Machine" data-amount="32" data-arena_const="2">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm  pt-2"
+                                                    onClick={this.preference} name="35 ft without Machine"
+                                                    data-amount="32" data-arena_const="2">Book
+                                            </button>
                                         </div>
                                     </div>
-                                    <hr id="hrline" className="mx-3 bg-success" />
+                                    <hr id="hrline" className="mx-3 bg-success"/>
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">35 Foot Cage (With baseball machine. If you want softball machine, call 321-266-5325)</h4>
+                                            <h4 className="Foot-cage">35 Foot Cage (With baseball machine. If you want
+                                                softball machine, call 321-266-5325)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Balls, Pitching Screen and Tee.
                                             </h5>
@@ -317,7 +323,10 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm   pt-2" onClick={this.preference} name="35 ft with Machine" data-amount="46" data-arena_const="1">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm   pt-2"
+                                                    onClick={this.preference} name="35 ft with Machine" data-amount="46"
+                                                    data-arena_const="1">Book
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -349,13 +358,17 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="70 ft Ground without Machine" data-amount="54" data-arena_const="4">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm  pt-2"
+                                                    onClick={this.preference} name="70 ft Ground without Machine"
+                                                    data-amount="54" data-arena_const="4">Book
+                                            </button>
                                         </div>
                                     </div>
-                                    <hr id="hrline" className="mx-3 bg-success" />
+                                    <hr id="hrline" className="mx-3 bg-success"/>
                                     <div className="row p-4">
                                         <div className="col-md-6">
-                                            <h4 className="Foot-cage">70 Foot Cage (With baseball machine. If you want softball machine, call 321-266-5325)</h4>
+                                            <h4 className="Foot-cage">70 Foot Cage (With baseball machine. If you want
+                                                softball machine, call 321-266-5325)</h4>
                                             <h5 className="Foot-cage-paragraph">
                                                 Includes Balls, Pitching Screen and Tee.
                                             </h5>
@@ -366,7 +379,10 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="70 ft with Machine" data-amount="66" data-arena_const="3">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm  pt-2"
+                                                    onClick={this.preference} name="70 ft with Machine" data-amount="66"
+                                                    data-arena_const="3">Book
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -398,10 +414,13 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="Full Facility without Machine"  data-amount="110" data-arena_const="6">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm  pt-2"
+                                                    onClick={this.preference} name="Full Facility without Machine"
+                                                    data-amount="110" data-arena_const="6">Book
+                                            </button>
                                         </div>
                                     </div>
-                                    <hr id="hrline" className="mx-3 bg-success" />
+                                    <hr id="hrline" className="mx-3 bg-success"/>
                                     <div className="row p-4">
                                         <div className="col-md-6">
                                             <h4 className="Foot-cage">Full Facility (with machine)</h4>
@@ -415,7 +434,10 @@ class Rentcage extends React.Component {
                                             </h3>
                                         </div>
                                         <div className="col-md-3 text-center">
-                                            <button id="sendbutton" className="btn btn-sm  pt-2" onClick={this.preference} name="Full Facility with Machine"  data-amount="130" data-arena_const="5">Book</button>
+                                            <button id="sendbutton" className="btn btn-sm  pt-2"
+                                                    onClick={this.preference} name="Full Facility with Machine"
+                                                    data-amount="130" data-arena_const="5">Book
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -435,12 +457,10 @@ class Rentcage extends React.Component {
                 </section>
 
 
-
-
-
-                <Modal size="lg" show={this.state.show}  >
-                    <Modal.Header  id="samecolor" ><span className=".modal"><h2 >Reserve Your Cage</h2></span></Modal.Header>
-                    <Modal.Body className=".modal text-center" >
+                <Modal size="lg" show={this.state.show}>
+                    <Modal.Header id="samecolor"><span
+                        className=".modal"><h2>Reserve Your Cage</h2></span></Modal.Header>
+                    <Modal.Body className=".modal text-center">
                         <div className="card">
 
                             <div className="card-body mx-5">
@@ -465,30 +485,33 @@ class Rentcage extends React.Component {
 
                                         <div id="slot-timings">
                                             {
-                                                 (this.state.slots !=undefined) ? 
-                                                this.state.slots.map((time) => {
-                                                    let hour = parseInt(time.split(":")[0])
-                                                    let display_time = null;
-                                                    if (hour  > 12){
-                                                        display_time = (hour - 12) + ":00 PM"
-                                                    } else if (hour === 0){
-                                                        display_time =  "12:00 AM"
+                                                (this.state.slots != undefined) ?
+                                                    this.state.slots.map((time) => {
+                                                        let hour = parseInt(time.split(":")[0])
+                                                        let display_time = null;
+                                                        if (hour > 12) {
+                                                            display_time = (hour - 12) + ":00 PM"
+                                                        } else if (hour === 0) {
+                                                            display_time = "12:00 AM"
 
-                                                    }else if (hour === 12){
-                                                        display_time =  "12:00 PM"
+                                                        } else if (hour === 12) {
+                                                            display_time = "12:00 PM"
 
-                                                    }
-                                                    else{
-                                                        display_time = hour + ":00 AM"
- 
-                                                    }
-                                                    return (
-                                                        <ul className="list-group">
-                                                            <input type="text" className="btn  btn-light text-weight-bold" readOnly value={display_time} time={time}  onClick={()=>this.timings(time, display_time)}id="listing" />
-                                                        </ul>
-                                                    )
-                                                }):null
-                                            
+                                                        } else {
+                                                            display_time = hour + ":00 AM"
+
+                                                        }
+                                                        return (
+                                                            <ul className="list-group">
+                                                                <input type="text"
+                                                                       className="btn  btn-light text-weight-bold"
+                                                                       readOnly value={display_time} time={time}
+                                                                       onClick={() => this.timings(time, display_time)}
+                                                                       id="listing"/>
+                                                            </ul>
+                                                        )
+                                                    }) : null
+
                                             }
                                         </div>
 
@@ -496,13 +519,16 @@ class Rentcage extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to='add-cart' onClick={this.sessions}  id="addcard_button_link" className="font-weight-bold disabled" ><button className="btn  mt-5" id="addcard_button" disabled>Reserve</button></Link>            
+                        <Link to='add-cart' onClick={this.sessions} id="addcard_button_link"
+                              className="font-weight-bold disabled">
+                            <button className="btn  mt-5" id="addcard_button" disabled>Reserve</button>
+                        </Link>
                         <button className="btn  mt-5" onClick={this.modal_deactive} id="close">close</button>
 
                     </Modal.Body>
 
                 </Modal>
-                
+
 
             </>
         )
@@ -511,7 +537,7 @@ class Rentcage extends React.Component {
 }
 
 
-    export default Rentcage
+export default Rentcage
 
 
 
