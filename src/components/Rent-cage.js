@@ -192,7 +192,7 @@ class Rentcage extends React.Component {
     getData = (selected_date) => {
         // let browswer_date = new Date()
         // let offset = browswer_date.getTimezoneOffset()
-        let dataurl = `https://admin.dingerstrainingcenter.com/check?date=${selected_date}&arena=${this.state.Data.ArenaNo}`; // converted utc offset to NY time by decrementing NY offset (240)
+        let dataurl = `https://admin.dingerstrainingcenter.com/cage/check?date=${selected_date}&arena=${this.state.Data.ArenaNo}`; // converted utc offset to NY time by decrementing NY offset (240)
         Axios.get(dataurl).then((response) => {
             let Data = response.data.time
             console.log(Data);
